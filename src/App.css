@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #E0E0E0;
+  color: #1A1A1A;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+/* =========================
+   ENTRIQ DESIGN SYSTEM
+========================= */
+
+:root {
+  --black: #1A1A1A;
+  --light-bg: #E0E0E0;
+  --red: #B22222;
+  --white: #FFFFFF;
+  --dark-gray: #2B2B2B;
+  --medium-gray: #333333;
+  --text-gray: #999999;
+}
+
+/* =========================
+   APP
+========================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 255px;
+  min-height: 100vh;
+  background: var(--black);
+  color: white;
+  padding: 26px 18px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  margin-bottom: 45px;
+}
+
+/* Shield icon ONLY
+   No background / no rectangle */
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--red);
+
+  background: transparent;
+  box-shadow: none;
+
+  flex-shrink: 0;
+}
+
+.logo-icon svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+/* EntriQ text */
+
+.logo h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.logo span {
+  display: block;
+  font-size: 9px;
+  color: #999999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 3px;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu-title {
+  font-size: 10px;
+  font-weight: 600;
+  color: #777777;
+  letter-spacing: 1.2px;
+  padding: 0 12px;
+  margin-bottom: 12px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 13px 14px;
+
+  border-radius: 10px;
+
+  background: transparent;
+  color: #999999;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: left;
+
+  transition: 0.25s;
+
+  position: relative;
+}
+
+.menu-item:hover {
+  background: #2B2B2B;
+  color: white;
+}
+
+.menu-item.active {
+  background: var(--red);
+  color: white;
+}
+
+.menu-item.active::before {
+  content: "";
+
+  width: 3px;
+  height: 20px;
+
+  background: #FFFFFF;
+
+  position: absolute;
+  left: 0;
+
+  border-radius: 0 5px 5px 0;
+}
+
+.menu-icon {
+  width: 22px;
+  font-size: 17px;
+  text-align: center;
+}
+
+/* =========================
+   SIDEBAR BOTTOM
+========================= */
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+
+.logout {
+  width: 100%;
+
+  background: transparent;
+  color: #999999;
+
+  padding: 12px;
+
+  text-align: left;
+
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  font-size: 12px;
+}
+
+.logout:hover {
+  color: var(--red);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+  margin-left: 255px;
+
+  width: calc(100% - 255px);
+
+  background: var(--light-bg);
+
+  min-height: 100vh;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 85px;
+
+  background: var(--black);
+
+  border-bottom: 1px solid #333333;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 38px;
+}
+
+.page-title h1 {
+  color: #FFFFFF;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.page-title p {
+  color: #B8B8B8;
+
+  font-size: 11px;
+
+  margin-top: 5px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* =========================
+   NOTIFICATION
+========================= */
+
+.notification {
+  position: relative;
+
+  background: #2B2B2B;
+  color: #FFFFFF;
+
+  width: 39px;
+  height: 39px;
+
+  border-radius: 10px;
+}
+
+.notification-dot {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--red);
+
+  right: 8px;
+  top: 7px;
+
+  border: 2px solid white;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: var(--red);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-weight: 700;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-info strong {
+  color: #FFFFFF;
+  font-size: 12px;
+}
+
+.profile-info span {
+  font-size: 9px;
+  color: #999999;
+}
+
+.arrow {
+  color: #999999;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    padding: 0 24px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    width: 72px;
+    padding: 20px 10px;
+  }
+
+  .logo {
+    justify-content: center;
+    padding: 0;
+  }
+
+  /* Hide logo text on mobile */
+
+  .logo > div:last-child,
+  .menu-title,
+  .menu-item span:last-child,
+  .help-card,
+  .logout {
+    display: none;
+  }
+
+  .menu-item {
+    justify-content: center;
+    padding: 13px;
+  }
+
+  .main {
+    margin-left: 72px;
+    width: calc(100% - 72px);
+  }
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .profile-info,
+  .arrow {
+    display: none;
+  }
+
+}

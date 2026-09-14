@@ -1,0 +1,1073 @@
+/* =========================
+   PARKING PAGE
+========================= */
+/* =========================
+   FIX PAGE SPACING
+========================= */
+/* =========================
+   PAGE CONTAINER SPACING
+========================= */
+
+.parking-page,
+.complaints-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 42px 48px 55px;
+  box-sizing: border-box;
+}
+.parking-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 42px 48px 55px;
+  box-sizing: border-box;
+}
+.parking-page .page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 20px 0;
+}
+
+.parking-page .page-header h1 {
+  margin: 0;
+  color: #182B43;
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+.parking-page .page-header p {
+  margin: 6px 0 0;
+  color: #6D8199;
+  font-size: 14px;
+}
+
+/* Keep all page elements inside the content area */
+
+.parking-page *,
+.parking-page *::before,
+.parking-page *::after {
+  box-sizing: border-box;
+}
+
+.parking-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.parking-page .page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.parking-page .page-header h1 {
+  margin: 0;
+  color: #182B43;
+  font-size: 32px;
+}
+
+.parking-page .page-header p {
+  margin: 6px 0 0;
+  color: #6D8199;
+  font-size: 14px;
+}
+
+
+/* PARKING HERO */
+
+.dashboard-hero {
+  min-height: 175px;
+  padding: 30px 34px;
+  margin-bottom: 18px;
+  border-radius: 15px;
+
+  background: linear-gradient(
+    110deg,
+    #1A1A1A 0%,
+    #252525 60%,
+    #3B171D 100%
+  );
+
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-hero::after {
+  content: "";
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  right: 40px;
+  top: -140px;
+  border-radius: 50%;
+  background: rgba(178, 34, 34, 0.13);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-small {
+  color: #EF727B;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.dashboard-hero h2 {
+  margin: 9px 0 7px;
+  color: white;
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.dashboard-hero h2 span {
+  color: #EF727B;
+}
+
+.hero-description {
+  margin: 0;
+  color: #AEB8C6;
+  font-size: 13px;
+}
+
+.hero-icon {
+  width: 92px;
+  height: 92px;
+  margin-right: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+.hero-icon svg {
+  width: 42px;
+  height: 42px;
+  fill: none;
+  stroke: #EF727B;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* PARKING STATISTICS */
+
+.parking-page .stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.parking-page .stat-card {
+  min-height: 125px;
+  padding: 18px 20px;
+  background: white;
+  border: 1px solid #F0F1F3;
+  border-radius: 13px;
+  box-shadow: 0 5px 18px rgba(20, 25, 35, 0.06);
+}
+
+.stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-top > span {
+  color: #929BAA;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.stat-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #FBE3E5;
+  color: #B22222;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon-box svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.available-icon {
+  background: #E1F4E9;
+  color: #24955B;
+}
+
+.occupied-icon {
+  background: #FBE3E5;
+  color: #B22222;
+}
+
+.stat-number {
+  margin-top: 9px;
+  color: #202B3B;
+  font-size: 27px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.stat-card p {
+  margin: 5px 0 0;
+  color: #7E8897;
+  font-size: 11px;
+}
+
+
+/* FIND VEHICLE */
+
+.parking-page .vehicle-search {
+  padding: 21px 25px;
+  margin-bottom: 18px;
+  background: white;
+  border-radius: 13px;
+  box-shadow: 0 5px 18px rgba(20, 25, 35, 0.06);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #273346;
+  font-size: 18px;
+}
+
+.section-heading p {
+  margin: 4px 0 0;
+  color: #929BAA;
+  font-size: 11px;
+}
+
+.section-icon {
+  width: 39px;
+  height: 39px;
+  border-radius: 10px;
+  background: #FBE3E5;
+  color: #B22222;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-icon svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.search-box {
+  display: flex;
+  gap: 9px;
+}
+
+.search-box input {
+  flex: 1;
+  height: 48px;
+  padding: 0 13px;
+  border: 1px solid #DCE1E7;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  color: #293548;
+  font-size: 12px;
+}
+
+.search-box input:focus {
+  border-color: #B22222;
+  box-shadow: 0 0 0 3px rgba(178, 34, 34, 0.06);
+}
+
+.search-box button {
+  min-width: 95px;
+  border: none;
+  border-radius: 8px;
+  background: #B22222;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.search-box button:hover {
+  background: #941C1C;
+}
+
+.search-result,
+.not-found {
+  margin: 11px 0 0;
+  padding: 9px 11px;
+  border-radius: 7px;
+  font-size: 11px;
+}
+
+.search-result {
+  background: #E1F4E9;
+  color: #24955B;
+}
+
+.not-found {
+  background: #FBE3E5;
+  color: #B22222;
+}
+
+
+/* PARKING SECTION */
+
+.parking-page .parking-section {
+  display: grid;
+  grid-template-columns: 1.55fr 0.8fr;
+  gap: 18px;
+}
+
+.parking-layout-container,
+.slot-details-container {
+  background: white;
+  border-radius: 13px;
+  padding: 23px;
+  box-shadow: 0 5px 18px rgba(20, 25, 35, 0.06);
+}
+
+.parking-legend {
+  display: flex;
+  gap: 17px;
+  margin: 3px 0 17px;
+}
+
+.parking-legend div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #7D8795;
+  font-size: 10px;
+}
+
+.legend-box {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+}
+
+.available-box {
+  background: #42A96D;
+}
+
+.occupied-box {
+  background: #B22222;
+}
+
+
+/* PARKING GRID */
+
+.parking-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.slot {
+  min-height: 82px;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.slot:hover {
+  transform: translateY(-2px);
+}
+
+.slot-number {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.slot p {
+  margin: 4px 0 0;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.slot small {
+  margin-top: 3px;
+  font-size: 7px;
+  opacity: 0.75;
+}
+
+.slot.available {
+  background: #E5F5EB;
+  color: #24955B;
+}
+
+.slot.available:hover {
+  border-color: #42A96D;
+}
+
+.slot.occupied {
+  background: #FBE3E5;
+  color: #B22222;
+}
+
+.slot.occupied:hover {
+  border-color: #B22222;
+}
+
+.slot.selected {
+  border-color: #1A1A1A;
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.08);
+}
+
+
+/* SLOT DETAILS */
+
+.slot-details {
+  min-height: 280px;
+}
+
+.details-icon {
+  width: 46px;
+  height: 46px;
+  margin-bottom: 13px;
+  border-radius: 11px;
+  background: #FBE3E5;
+  color: #B22222;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-icon svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.slot-details h2 {
+  margin: 0 0 17px;
+  color: #273346;
+  font-size: 19px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #EDF0F2;
+  font-size: 11px;
+}
+
+.detail-row span {
+  color: #7C8796;
+}
+
+.detail-row b {
+  color: #293548;
+}
+
+.detail-available {
+  color: #24955B !important;
+}
+
+.detail-occupied {
+  color: #B22222 !important;
+}
+
+.add-vehicle {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-vehicle label {
+  margin-bottom: 6px;
+  color: #596576;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.add-vehicle input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 9px;
+  border: 1px solid #DCE1E7;
+  border-radius: 8px;
+  outline: none;
+  color: #293548;
+  font-size: 11px;
+}
+
+.add-vehicle input:focus {
+  border-color: #B22222;
+}
+
+.add-vehicle button,
+.remove-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #B22222;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.add-vehicle button:hover {
+  background: #941C1C;
+}
+
+.remove-button {
+  margin-top: 16px;
+  background: #1A1A1A;
+}
+
+.remove-button:hover {
+  background: #333333;
+}
+
+.empty-details {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.empty-details p {
+  max-width: 220px;
+  color: #929BAA;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   COMPLAINTS PAGE
+========================= */
+.complaints-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 42px 48px 55px;
+  box-sizing: border-box;
+}
+
+.complaints-page .page-header {
+  margin-bottom: 22px;
+}
+
+.complaints-page .page-header h1 {
+  margin: 0;
+  color: #182B43;
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+.complaints-page .page-header p {
+  margin: 7px 0 0;
+  color: #6D8199;
+  font-size: 14px;
+}
+
+
+/* GRIEVANCE BANNER */
+
+.grievance-banner {
+  min-height: 190px;
+  padding: 30px 35px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+
+  background: linear-gradient(
+    110deg,
+    #1A1A1A 0%,
+    #252525 65%,
+    #3B171D 100%
+  );
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.grievance-banner::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: 50px;
+  top: -130px;
+  border-radius: 50%;
+  background: rgba(178, 34, 34, 0.15);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-label {
+  color: #EF727B;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.banner-content h2 {
+  margin: 9px 0 7px;
+  color: white;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.banner-content h2 span {
+  color: #EF727B;
+}
+
+.banner-content p {
+  margin: 0;
+  color: #AEB8C6;
+  font-size: 13px;
+}
+
+.banner-icon {
+  width: 90px;
+  height: 90px;
+  margin-right: 45px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.banner-icon svg {
+  width: 42px;
+  height: 42px;
+  fill: none;
+  stroke: #EF727B;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* COMPLAINT LAYOUT */
+
+.complaints-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.heading-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 10px;
+  background: #FBE3E5;
+  color: #B22222;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.heading-icon svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.card-heading h2 {
+  margin: 0;
+  color: #273346;
+  font-size: 18px;
+}
+
+.card-heading p {
+  margin: 4px 0 0;
+  color: #929BAA;
+  font-size: 11px;
+}
+
+
+/* FORM */
+
+.complaint-form-card {
+  padding: 25px;
+  background: white;
+  border: 1px solid #F0F1F3;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(20,25,35,0.06);
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 6px;
+  color: #3B4656;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #DCE1E7;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  color: #293548;
+  font-size: 12px;
+}
+
+.form-field input {
+  height: 44px;
+}
+
+.form-field textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #B22222;
+  box-shadow: 0 0 0 3px rgba(178,34,34,0.06);
+}
+
+.submit-complaint-btn {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  background: #B22222;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.submit-complaint-btn:hover {
+  background: #941C1C;
+}
+
+
+/* COMPLAINT LIST */
+
+.complaints-list-card {
+  padding: 25px;
+  background: white;
+  border: 1px solid #F0F1F3;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(20,25,35,0.06);
+}
+
+.complaints-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.complaint-item {
+  min-height: 80px;
+  padding: 14px;
+  border: 1px solid #EDF0F2;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  transition: 0.2s ease;
+}
+
+.complaint-item:hover {
+  border-color: #D9DDE2;
+  transform: translateY(-1px);
+}
+
+.complaint-item-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: #FBE3E5;
+  color: #B22222;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.complaint-item-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.complaint-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.complaint-info h3 {
+  margin: 0 0 5px;
+  color: #273346;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.complaint-info p {
+  margin: 0;
+  color: #8993A1;
+  font-size: 10px;
+}
+
+.complaint-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.status-badge {
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.status-badge.pending {
+  background: #FFF0D6;
+  color: #B76A00;
+}
+
+.status-badge.resolved {
+  background: #E1F4E9;
+  color: #24955B;
+}
+
+.resolve-btn {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #1A1A1A;
+  color: white;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.resolve-btn:hover {
+  background: #B22222;
+}
+
+.empty-complaints {
+  padding: 30px;
+  text-align: center;
+  color: #929BAA;
+  font-size: 12px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .parking-page .parking-section {
+    grid-template-columns: 1fr;
+  }
+
+  .complaints-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .parking-page .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .parking-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-hero,
+  .grievance-banner {
+    padding: 25px;
+  }
+
+  .hero-icon,
+  .banner-icon {
+    display: none;
+  }
+}
+
+/* Remove the black background from Parking and Complaints page headings */
+.parking-page .page-header,
+.complaints-page .page-header {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 24px;
+}
+
+/* Heading text styling */
+.parking-page .page-header h1,
+.complaints-page .page-header h1 {
+  color: #172b4d !important;
+  background: transparent !important;
+  margin: 0;
+}
+
+/* Subtitle styling */
+.parking-page .page-header p,
+.complaints-page .page-header p {
+  color: #64748b !important;
+  background: transparent !important;
+  margin-top: 6px;
+}
+
+/* Parking vehicle search area */
+.parking-page .search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.parking-page .search-box input {
+  flex: 1;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  color: #172b4d;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.parking-page .search-box input:focus {
+  border-color: #d62828;
+  box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.1);
+}
+
+.parking-page .search-box button {
+  height: 44px;
+  min-width: 100px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 8px;
+  background: #c9232b;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.parking-page .search-box button:hover {
+  background: #a91d24;
+  transform: translateY(-1px);
+}
+
+.parking-page .search-box button:active {
+  transform: translateY(0);
+}
+@media (max-width: 600px) {
+  .parking-page .search-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .parking-page .search-box button {
+    width: 100%;
+  }
+}
+

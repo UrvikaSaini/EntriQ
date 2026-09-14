@@ -1,0 +1,234 @@
+.visitor-container {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.page-header {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  background-color: #1A1A1A;
+}
+
+.page-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  margin-right: 1rem;
+}
+
+.page-subtitle {
+  color: #666;
+  text-align: center;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Tabs Bar */
+.visitors-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
+}
+
+.tab-btn, .tab-btn-active {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.tab-btn:hover {
+  background-color: #e8e8e8;
+  color: #333;
+}
+
+.tab-btn-active {
+  background-color: #B22222;
+  color: #fff;
+}
+
+/* Search and Filter Controls */
+.filter-bar {
+  margin: 0 0.5rem;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: #888;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 10px 10px 36px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: #B22222;
+}
+
+.category-select {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Data Table Card */
+.table-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.visitors-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.visitors-table th {
+  background-color: #f8f9fa;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.visitors-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #edf2f7;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.visitors-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Visitor Info Cell (Avatar + Details) */
+.visitor-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #f59993;
+  color: #B22222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.visitor-info-cell div {
+  display: flex;
+  flex-direction: column;
+}
+
+.visitor-info-cell strong {
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+.visitor-info-cell small {
+  color: #777;
+  font-size: 12px;
+}
+
+/* Badges and Category Tags */
+.category-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.category-tag.Guest, .category-tag.guest {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+.category-tag.Delivery, .category-tag.delivery {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.category-tag.Service, .category-tag.service {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-badge.approved, .status-badge.Inside {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.pending {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+
+.status-badge.denied {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Utility State Displays */
+.loading-state, .empty-state {
+  padding: 40px;
+  text-align: center;
+  color: #666;
+  font-size: 15px;
+}

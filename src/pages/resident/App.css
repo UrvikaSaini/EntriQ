@@ -1,0 +1,401 @@
+/* =========================================
+   GLOBAL RESET FOR RESIDENT MODULE
+========================================= */
+
+.resident-app {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #e0e0e0;
+  color: #172033;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.resident-app *,
+.resident-app *::before,
+.resident-app *::after {
+  box-sizing: border-box;
+}
+
+/* Do not apply margin to body.
+   The Guard/Admin modules have their own layouts. */
+body {
+  margin: 0;
+}
+
+/* =========================================
+   RESIDENT LEFT SIDEBAR
+========================================= */
+
+.resident-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 260px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar brand */
+
+.resident-sidebar-brand {
+  height: 76px;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border-bottom: 1px solid #333333;
+  flex-shrink: 0;
+}
+
+.resident-brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b22222;
+  font-size: 1.6rem;
+}
+
+.resident-sidebar-brand h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+/* Sidebar menu */
+
+.resident-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px 14px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.resident-nav-item {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #94a3b8;
+  font-family: inherit;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.resident-nav-item:hover {
+  background-color: #2b2b2b;
+  color: #ffffff;
+}
+
+.resident-nav-item.active {
+  background-color: #c52222;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.resident-nav-icon {
+  min-width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.resident-nav-label {
+  flex: 1;
+}
+
+.resident-nav-badge {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #c52222;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Sidebar footer */
+
+.resident-sidebar-footer {
+  padding: 20px 18px;
+  border-top: 1px solid #333333;
+  flex-shrink: 0;
+}
+
+.resident-user-profile-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.resident-avatar {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: #c52222;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.resident-user-info p {
+  margin: 0;
+}
+
+.resident-user-name {
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.resident-user-unit {
+  margin-top: 5px !important;
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+/* =========================================
+   RESIDENT TOP NAVBAR
+========================================= */
+
+.resident-top-navbar {
+  position: fixed;
+  top: 0;
+  left: 260px;
+  right: 0;
+  z-index: 80;
+  height: 76px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333333;
+}
+
+.resident-top-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.resident-top-brand svg {
+  color: #b22222;
+  font-size: 1.65rem;
+}
+
+.resident-top-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.resident-top-avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #b22222;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.resident-top-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.resident-top-user-info strong {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.resident-top-user-info span {
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.resident-main-content {
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  margin-left: 260px;
+  padding-top: 76px;
+  background-color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+/* Each page fills the available content area */
+
+.resident-main-content > * {
+  min-height: calc(100vh - 76px);
+}
+
+/* =========================================
+   REMOVE OLD DUPLICATE NAVBARS
+========================================= */
+
+/* Dashboard old navbar */
+.resident-main-content .dash-header .dash-navbar {
+  display: none;
+}
+
+/* Profile old navbar */
+.resident-main-content .res-navbar {
+  display: none;
+}
+
+/* Create Visitor old navbar */
+.resident-main-content .pass-nav {
+  display: none;
+}
+
+/* Visitor page old brand area */
+.resident-main-content .page-header .brand-logo {
+  display: none;
+}
+
+/* Visitor Request old navbar */
+.resident-main-content .vis-req-nav {
+  display: none;
+}
+
+/* =========================================
+   PAGE CONTENT SPACING
+========================================= */
+
+.resident-main-content .dash-sub-header,
+.resident-main-content .stats-grid,
+.resident-main-content .dash-tabs,
+.resident-main-content .tab-section,
+.resident-main-content .pass-header,
+.resident-main-content .alert-banner,
+.resident-main-content .passes-grid,
+.resident-main-content .create-visitor-container,
+.resident-main-content .visitor-container,
+.resident-main-content .requests-container,
+.resident-main-content .profile-container {
+  max-width: 100%;
+}
+
+/* Fix Dashboard tabs */
+.resident-main-content .dash-tabs {
+  justify-content: flex-start;
+}
+
+/* Fix buttons */
+.resident-main-content button {
+  font-family: inherit;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+.resident-mobile-toggle-btn {
+  display: none;
+}
+
+.resident-sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .resident-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .resident-sidebar.resident-mobile-open {
+    transform: translateX(0);
+  }
+
+  .resident-mobile-toggle-btn {
+    position: fixed;
+    top: 13px;
+    left: 14px;
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    background-color: #b22222;
+    color: #ffffff;
+    font-size: 23px;
+    cursor: pointer;
+  }
+
+  .resident-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    display: block;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .resident-top-navbar {
+    left: 0;
+    height: 65px;
+    padding: 0 18px;
+  }
+
+  .resident-top-brand {
+    margin-left: 55px;
+    font-size: 1.2rem;
+  }
+
+  .resident-top-brand svg {
+    font-size: 1.35rem;
+  }
+
+  .resident-top-user-info {
+    display: none;
+  }
+
+  .resident-main-content {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 65px;
+  }
+
+  .resident-main-content > * {
+    min-height: calc(100vh - 65px);
+  }
+}

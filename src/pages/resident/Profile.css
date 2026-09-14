@@ -1,0 +1,155 @@
+.profile-container{
+  margin: 0 0 1rem 0;
+}
+.res-navbar{
+  display: flex;
+  background-color: #1A1A1A;
+  justify-content: space-between;
+  margin-right: 0;
+}
+.res-navbar h2{
+  color: white;
+  margin-right: 0.4rem;
+}
+.res-profile-info{
+  margin: 1rem 1rem;
+  display: flex;
+  gap: 0.5rem;
+  background: none;
+}
+.res-profile-info h2{
+  font-size: 1.4rem;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #B22222;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.res-profile-card{
+    margin: auto;
+    border-radius: 13px;
+    padding: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: black;
+    background-color: white;
+    height: 25rem;
+    width: 25rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.unit-badge {
+  background-color: #FFCCCC;
+  color: #B22222;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.detail-icon {
+  color: #64748b;
+  font-size: 1.2rem;
+}
+
+.detail-item label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-item p {
+  margin: 2px 0 0 0;
+  font-size: 1rem;
+  color: #1e293b;
+  font-weight: 500;
+}
+.edit-btn{
+  background-color: #B22222;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  gap: 8px;
+  flex: 1;
+}
+.save-btn {
+  background-color: #B22222;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.cancel-btn {
+  background-color: #B22222;
+  color: white;
+  border: none;
+  height: 3rem;
+  padding: 5px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edit-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1A1A1A;
+}
+
+.edit-form input {
+  padding: 10px 12px;
+  border: 1px solid #B22222;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.alert-success {
+  background-color: #d1fae5;
+  color: #065f46;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}

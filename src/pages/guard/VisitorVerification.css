@@ -1,0 +1,821 @@
+/* ================================
+   VISITOR VERIFICATION PAGE
+================================ */
+
+.visitor-page {
+  padding: 30px;
+  background: #E0E0E0;
+  min-height: 100%;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.visitor-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.visitor-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #B22222;
+  letter-spacing: 1.5px;
+}
+
+.visitor-page-header h2 {
+  margin: 7px 0 5px;
+  font-size: 28px;
+  color: #1A1A1A;
+}
+
+.visitor-page-header p {
+  margin: 0;
+  color: #666666;
+  font-size: 14px;
+}
+
+.visitor-status-ready {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  border: 1px solid #D5D5D5;
+  color: #444444;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.visitor-status-ready span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2E9B4B;
+  box-shadow: 0 0 0 4px rgba(46, 155, 75, 0.12);
+}
+
+
+/* ================================
+   MAIN LAYOUT
+================================ */
+
+.visitor-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
+.visitor-form-card,
+.visitor-result-card {
+  background: #FFFFFF;
+  border: 1px solid #D5D5D5;
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 7px 24px rgba(25, 25, 25, 0.07);
+}
+
+.visitor-card-header,
+.visitor-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.visitor-card-header h3,
+.visitor-result-header h3 {
+  margin: 0 0 5px;
+  color: #1A1A1A;
+  font-size: 18px;
+}
+
+.visitor-card-header p,
+.visitor-result-header p {
+  margin: 0;
+  color: #777777;
+  font-size: 13px;
+}
+
+.visitor-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #FBEAEA;
+  color: #B22222;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.visitor-form-group {
+  margin-bottom: 16px;
+}
+
+.visitor-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3A3A3A;
+}
+
+.visitor-form-group label span {
+  color: #B22222;
+}
+
+.visitor-form-group label small {
+  color: #888888;
+  font-weight: 400;
+}
+
+.visitor-form-group input,
+.visitor-form-group select {
+  width: 100%;
+  padding: 12px 14px;
+
+  border: 1px solid #C8C8C8;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #F7F7F7;
+  color: #1A1A1A;
+
+  font-size: 14px;
+
+  box-sizing: border-box;
+
+  transition: 0.2s;
+}
+
+.visitor-form-group input::placeholder {
+  color: #A1A1A1;
+}
+
+.visitor-form-group input:focus,
+.visitor-form-group select:focus {
+  border-color: #B22222;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(178, 34, 34, 0.12);
+}
+
+
+/* ================================
+   FORM BUTTONS
+================================ */
+
+.visitor-form-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.visitor-verify-button {
+  flex: 1;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 13px;
+
+  background: #B22222;
+  color: #FFFFFF;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.visitor-verify-button:hover {
+  background: #8F1B1B;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(178, 34, 34, 0.20);
+}
+
+.visitor-reset-button {
+  border: 1px solid #C8C8C8;
+  border-radius: 10px;
+
+  padding: 13px 20px;
+
+  background: #FFFFFF;
+  color: #4F4F4F;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.visitor-reset-button:hover {
+  background: #F3F3F3;
+}
+
+
+/* ================================
+   MESSAGE
+================================ */
+
+.visitor-message {
+  margin-top: 18px;
+  padding: 13px 15px;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 13px;
+}
+
+.visitor-message span {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.visitor-message p {
+  margin: 0;
+}
+
+
+/* ERROR / DENIED */
+
+.visitor-message.error,
+.visitor-message.denied {
+  background: #FBEAEA;
+  color: #8F1B1B;
+  border: 1px solid #E7C1C1;
+}
+
+
+/* SUCCESS */
+
+.visitor-message.success {
+  background: #E8F5E9;
+  color: #218838;
+  border: 1px solid #B7DFBA;
+  font-weight: 600;
+}
+
+
+/* ================================
+   EMPTY RESULT
+================================ */
+
+.visitor-empty {
+  min-height: 390px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.visitor-empty-icon {
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+
+  background: #F1F1F1;
+  color: #777777;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+
+  margin-bottom: 15px;
+}
+
+.visitor-empty strong {
+  color: #3A3A3A;
+  font-size: 15px;
+}
+
+.visitor-empty p {
+  margin-top: 7px;
+
+  color: #888888;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ================================
+   VERIFICATION RESULT
+================================ */
+
+.visitor-result {
+  text-align: center;
+}
+
+
+/* BRIGHT VERIFIED ICON */
+
+.visitor-verified-icon {
+  width: 62px;
+  height: 62px;
+
+  margin: 2px auto 12px;
+
+  border-radius: 50%;
+
+  background: #E8F5E9;
+  color: #2E9B4B;
+
+  border: 2px solid #B7DFBA;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 27px;
+  font-weight: 700;
+
+  box-shadow: 0 5px 18px rgba(46, 155, 75, 0.14);
+}
+
+.visitor-result h3 {
+  margin: 0;
+
+  color: #1A1A1A;
+
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.visitor-result-subtitle {
+  margin: 6px 0 20px;
+
+  color: #666666;
+
+  font-size: 13px;
+}
+
+
+/* ================================
+   VISITOR DETAILS
+================================ */
+
+.visitor-detail-list {
+  text-align: left;
+
+  border: 1px solid #D5D5D5;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  background: #FFFFFF;
+}
+
+.visitor-detail {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 14px;
+
+  background: #FFFFFF;
+
+  border-bottom: 1px solid #E4E4E4;
+}
+
+.visitor-detail:nth-child(even) {
+  background: #FAFAFA;
+}
+
+.visitor-detail:last-child {
+  border-bottom: none;
+}
+
+.visitor-detail span {
+  color: #707070;
+  font-size: 13px;
+}
+
+.visitor-detail strong {
+  color: #222222;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  text-align: right;
+}
+
+
+/* ================================
+   RESIDENT APPROVAL
+================================ */
+
+.resident-approval {
+  margin-top: 16px;
+
+  padding: 15px;
+
+  border: 1px solid #D5D5D5;
+  border-radius: 12px;
+
+  background: #FFFFFF;
+
+  text-align: left;
+
+  box-shadow: 0 3px 12px rgba(25, 25, 25, 0.04);
+}
+
+.approval-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 12px;
+}
+
+.approval-header > span {
+  color: #444444;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* APPROVED = GREEN */
+
+.approval-approved {
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: #E8F5E9;
+  color: #218838;
+
+  border: 1px solid #B7DFBA;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* PENDING = AMBER */
+
+.approval-pending {
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: #FFF5DD;
+  color: #9A741F;
+
+  border: 1px solid #EFD9A3;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.approval-details {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 6px 0;
+}
+
+.approval-details span {
+  color: #777777;
+  font-size: 12px;
+}
+
+.approval-details strong {
+  color: #333333;
+  font-size: 12px;
+}
+
+
+/* ================================
+   ALLOW / DENY BUTTONS
+================================ */
+
+.visitor-decision-buttons {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.allow-visitor-button,
+.deny-visitor-button {
+  border-radius: 10px;
+
+  padding: 12px;
+
+  font-weight: 700;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+/* GREEN ALLOW BUTTON */
+
+.allow-visitor-button {
+  background: #2E9B4B;
+  color: #FFFFFF;
+
+  border: none;
+
+  box-shadow: 0 4px 12px rgba(46, 155, 75, 0.15);
+}
+
+.allow-visitor-button:hover {
+  background: #247A3A;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(46, 155, 75, 0.22);
+}
+
+
+/* RED DENY BUTTON */
+
+.deny-visitor-button {
+  background: #FBEAEA;
+  color: #8F1B1B;
+
+  border: 1px solid #E5C5C5;
+}
+
+.deny-visitor-button:hover {
+  background: #F1DADA;
+  transform: translateY(-1px);
+}
+
+
+/* ================================
+   PENDING APPROVAL
+================================ */
+
+.pending-approval {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-top: 18px;
+
+  padding: 14px;
+
+  border-radius: 11px;
+
+  background: #FFF8E8;
+  border: 1px solid #F0DDAF;
+
+  color: #8A6A22;
+
+  text-align: left;
+}
+
+.pending-approval > span {
+  font-size: 18px;
+  color: #C79524;
+}
+
+.pending-approval strong {
+  display: block;
+
+  font-size: 13px;
+
+  margin-bottom: 3px;
+
+  color: #8A6A22;
+}
+
+.pending-approval p {
+  margin: 0;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  color: #806C43;
+}
+
+
+/* ================================
+   FINAL APPROVED STATUS
+================================ */
+
+.final-entry-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 18px;
+
+  padding: 14px;
+
+  border-radius: 11px;
+
+  text-align: left;
+
+  background: #E8F5E9;
+  border: 1px solid #B7DFBA;
+
+  color: #218838;
+
+  box-shadow: 0 4px 14px rgba(46, 155, 75, 0.10);
+}
+
+.final-entry-status > span {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2E9B4B;
+}
+
+.final-entry-status strong {
+  display: block;
+  font-size: 13px;
+  color: #218838;
+}
+
+.final-entry-status small {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 11px;
+
+  color: #4F7655;
+}
+
+
+/* ================================
+   FINAL DENIED STATUS
+================================ */
+
+.final-denied-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 18px;
+
+  padding: 14px;
+
+  border-radius: 11px;
+
+  text-align: left;
+
+  background: #FBEAEA;
+  border: 1px solid #E5C5C5;
+
+  color: #8F1B1B;
+}
+
+.final-denied-status > span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.final-denied-status strong {
+  display: block;
+  font-size: 13px;
+}
+
+.final-denied-status small {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 11px;
+}
+
+
+/* ================================
+   SECURITY NOTE
+================================ */
+
+.visitor-security-note {
+  margin-top: 24px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 17px 20px;
+
+  border: 1px solid #D5D5D5;
+  border-radius: 14px;
+
+  background: #FFFFFF;
+
+  box-shadow: 0 4px 14px rgba(25, 25, 25, 0.04);
+}
+
+.visitor-security-icon {
+  color: #B22222;
+  font-size: 22px;
+}
+
+.visitor-security-note strong {
+  display: block;
+
+  color: #333333;
+
+  font-size: 14px;
+
+  margin-bottom: 4px;
+}
+
+.visitor-security-note p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 12px;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 950px) {
+
+  .visitor-layout {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .visitor-page {
+    padding: 20px;
+  }
+
+  .visitor-page-header {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .visitor-form-buttons {
+    flex-direction: column;
+  }
+
+  .visitor-decision-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .visitor-detail {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .visitor-detail strong {
+    max-width: 55%;
+  }
+
+}

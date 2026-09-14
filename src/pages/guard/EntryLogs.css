@@ -1,0 +1,567 @@
+/* ================================
+   ENTRY LOGS PAGE
+================================ */
+
+.entry-logs-page {
+  padding: 34px 42px;
+  min-height: calc(100vh - 90px);
+  background: #E0E0E0;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.entry-logs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.entry-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #B22222;
+  margin-bottom: 7px;
+}
+
+.entry-logs-header h2 {
+  margin: 0;
+  font-size: 27px;
+  color: #1A1A1A;
+  font-weight: 800;
+}
+
+.entry-logs-header p {
+  margin: 7px 0 0;
+  color: #666666;
+  font-size: 14px;
+}
+
+
+/* ================================
+   DATE
+================================ */
+
+.log-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 10px 18px;
+
+  background: #FFFFFF;
+  border: 1px solid #D5D5D5;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 14px rgba(25, 25, 25, 0.05);
+}
+
+.log-date span {
+  color: #777777;
+  font-size: 10px;
+}
+
+.log-date strong {
+  color: #B22222;
+  font-size: 20px;
+  margin-top: 3px;
+  font-weight: 800;
+}
+
+
+/* ================================
+   SUMMARY
+================================ */
+
+.entry-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.entry-summary-card {
+  background: #FFFFFF;
+  border: 1px solid #D5D5D5;
+  border-radius: 15px;
+
+  padding: 19px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  box-shadow: 0 6px 20px rgba(25, 25, 25, 0.06);
+
+  transition: 0.2s ease;
+}
+
+.entry-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 25px rgba(25, 25, 25, 0.09);
+}
+
+
+/* ================================
+   SUMMARY ICON
+================================ */
+
+.entry-summary-icon {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #FBEAEA;
+  color: #B22222;
+
+  font-size: 18px;
+
+  flex-shrink: 0;
+}
+
+
+/* GREEN SUMMARY ICON */
+
+.entry-summary-icon.green {
+  background: #E8F5E9;
+  color: #2E9B4B;
+}
+
+
+/* RED SUMMARY ICON */
+
+.entry-summary-icon.blue {
+  background: #FBEAEA;
+  color: #B22222;
+}
+
+
+/* SUMMARY TEXT */
+
+.entry-summary-card span {
+  display: block;
+  color: #707070;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.entry-summary-card strong {
+  color: #1A1A1A;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+
+/* ================================
+   LOG CARD
+================================ */
+
+.entry-logs-card {
+  background: #FFFFFF;
+  border: 1px solid #D5D5D5;
+  border-radius: 18px;
+
+  box-shadow: 0 7px 24px rgba(25, 25, 25, 0.07);
+
+  overflow: hidden;
+}
+
+
+/* ================================
+   LOG CARD HEADER
+================================ */
+
+.entry-logs-card-header {
+  padding: 23px 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #E1E1E1;
+
+  background: #FFFFFF;
+}
+
+.entry-logs-card-header h3 {
+  margin: 0;
+  font-size: 17px;
+  color: #1A1A1A;
+  font-weight: 750;
+}
+
+.entry-logs-card-header p {
+  margin: 5px 0 0;
+  color: #777777;
+  font-size: 12px;
+}
+
+
+/* ================================
+   SEARCH
+================================ */
+
+.entry-search {
+  width: 270px;
+  height: 42px;
+
+  border: 1px solid #C8C8C8;
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 12px;
+  gap: 8px;
+
+  background: #F8F8F8;
+
+  transition: 0.2s ease;
+}
+
+.entry-search:focus-within {
+  border-color: #B22222;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(178, 34, 34, 0.12);
+}
+
+.entry-search span {
+  color: #999999;
+  font-size: 18px;
+}
+
+.entry-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 12px;
+  color: #2B2B2B;
+}
+
+.entry-search input::placeholder {
+  color: #888888;
+}
+
+
+/* ================================
+   TABLE
+================================ */
+
+.entry-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.entry-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+/* TABLE HEADER */
+
+.entry-table th {
+  padding: 14px 25px;
+
+  text-align: left;
+
+  background: #F5F5F5;
+
+  color: #666666;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+}
+
+
+/* TABLE DATA */
+
+.entry-table td {
+  padding: 17px 25px;
+
+  border-top: 1px solid #E7E7E7;
+
+  background: #FFFFFF;
+
+  color: #555555;
+
+  font-size: 12px;
+}
+
+
+/* ROW HOVER */
+
+.entry-table tbody tr {
+  transition: 0.15s ease;
+}
+
+.entry-table tbody tr:hover {
+  background: #FAFAFA;
+}
+
+.entry-table tbody tr:hover td {
+  background: #FAFAFA;
+}
+
+
+/* ================================
+   VISITOR
+================================ */
+
+.entry-visitor {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+
+/* AVATAR */
+
+.entry-avatar {
+  width: 37px;
+  height: 37px;
+
+  border-radius: 50%;
+
+  background: #FBEAEA;
+  color: #B22222;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  flex-shrink: 0;
+}
+
+.entry-visitor strong {
+  display: block;
+
+  color: #222222;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.entry-visitor span {
+  display: block;
+
+  color: #999999;
+
+  font-size: 10px;
+
+  margin-top: 3px;
+}
+
+.entry-flat {
+  color: #3A3A3A;
+  font-weight: 600;
+}
+
+
+/* ================================
+   QR BADGE
+================================ */
+
+.qr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 6px 9px;
+
+  background: #E8F5E9;
+  color: #218838;
+
+  border: 1px solid #B7DFBA;
+
+  border-radius: 7px;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+
+/* ================================
+   VERIFIED / SUCCESS TEXT
+================================ */
+
+.entry-success {
+  color: #218838;
+  font-weight: 700;
+}
+
+.entry-denied {
+  color: #8F1B1B;
+  font-weight: 700;
+}
+
+.entry-pending {
+  color: #9A741F;
+  font-weight: 700;
+}
+
+
+/* ================================
+   STATUS BADGES
+================================ */
+
+.entry-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+
+/* APPROVED */
+
+.entry-status.approved {
+  background: #E8F5E9;
+  color: #218838;
+  border: 1px solid #B7DFBA;
+}
+
+
+/* PENDING */
+
+.entry-status.pending {
+  background: #FFF5DD;
+  color: #9A741F;
+  border: 1px solid #EFD9A3;
+}
+
+
+/* DENIED */
+
+.entry-status.denied {
+  background: #FBEAEA;
+  color: #8F1B1B;
+  border: 1px solid #E5C5C5;
+}
+
+
+/* ================================
+   NO RESULTS
+================================ */
+
+.no-entry-logs {
+  padding: 60px 20px;
+
+  text-align: center;
+
+  background: #FFFFFF;
+}
+
+.no-entry-logs > div {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 12px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #F3F3F3;
+  color: #888888;
+
+  font-size: 28px;
+}
+
+.no-entry-logs strong {
+  color: #3A3A3A;
+  font-size: 14px;
+}
+
+.no-entry-logs p {
+  margin: 6px 0 0;
+
+  color: #888888;
+
+  font-size: 11px;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+
+  .entry-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .entry-logs-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .entry-search {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .entry-logs-page {
+    padding: 20px;
+  }
+
+  .entry-logs-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .entry-logs-header h2 {
+    font-size: 23px;
+  }
+
+  .entry-summary-card {
+    padding: 16px;
+  }
+
+  .entry-logs-card-header {
+    padding: 19px;
+  }
+
+  .entry-table th {
+    padding: 12px 16px;
+  }
+
+  .entry-table td {
+    padding: 14px 16px;
+  }
+
+}

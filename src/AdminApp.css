@@ -1,0 +1,1121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #E0E0E0;
+  color: #1A1A1A;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+
+/* =========================================================
+   ENTRIQ DESIGN SYSTEM
+========================================================= */
+
+:root {
+  --black: #1A1A1A;
+  --light-bg: #E0E0E0;
+  --red: #B22222;
+  --white: #FFFFFF;
+  --dark-gray: #2B2B2B;
+  --medium-gray: #333333;
+  --text-gray: #999999;
+}
+
+
+/* =========================================================
+   ADMIN APP
+========================================================= */
+
+.admin-app {
+  min-height: 100vh;
+  display: flex;
+  background: var(--light-bg);
+}
+
+
+/* =========================================================
+   SIDEBAR
+   SAME STYLE AS YOUR GUARD MODULE
+========================================================= */
+
+.admin-sidebar {
+  width: 255px;
+  min-height: 100vh;
+
+  background: var(--black);
+  color: white;
+
+  padding: 26px 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+
+/* =========================================================
+   LOGO
+   SAME STYLE AS GUARD MODULE
+========================================================= */
+
+.admin-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 10px;
+
+  margin-bottom: 45px;
+}
+
+
+/* Shield icon */
+
+.admin-logo-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--red);
+
+  background: transparent;
+  box-shadow: none;
+
+  flex-shrink: 0;
+}
+
+.admin-logo-icon svg {
+  width: 32px;
+  height: 32px;
+
+  display: block;
+}
+
+
+/* EntriQ text */
+
+.admin-logo h2 {
+  font-size: 20px;
+  font-weight: 800;
+
+  color: var(--white);
+
+  letter-spacing: -0.5px;
+
+  margin: 0;
+  line-height: 1.1;
+}
+
+.admin-logo span {
+  display: block;
+
+  font-size: 9px;
+
+  color: #999999;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  margin-top: 3px;
+}
+
+
+/* =========================================================
+   MENU TITLE
+========================================================= */
+
+.admin-menu-title {
+  font-size: 10px;
+  font-weight: 600;
+
+  color: #777777;
+
+  letter-spacing: 1.2px;
+
+  padding: 0 12px;
+
+  margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   SAME STYLE AS GUARD MODULE
+========================================================= */
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+.admin-nav-item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 13px 14px;
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: #999999;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: left;
+
+  transition: 0.25s;
+
+  position: relative;
+}
+
+
+/* Icons */
+
+.admin-nav-item svg {
+  width: 22px;
+
+  font-size: 17px;
+
+  text-align: center;
+
+  flex-shrink: 0;
+}
+
+
+/* Hover */
+
+.admin-nav-item:hover {
+  background: #2B2B2B;
+  color: white;
+}
+
+
+/* Active */
+
+.admin-nav-item.active {
+  background: var(--red);
+  color: white;
+}
+
+
+/* White active indicator */
+
+.admin-nav-item.active::before {
+  content: "";
+
+  width: 3px;
+  height: 20px;
+
+  background: #FFFFFF;
+
+  position: absolute;
+
+  left: 0;
+
+  border-radius: 0 5px 5px 0;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.admin-sidebar-bottom {
+  margin-top: auto;
+}
+
+
+.admin-logout {
+  width: 100%;
+
+  background: transparent;
+
+  color: #999999;
+
+  padding: 12px;
+
+  text-align: left;
+
+  display: flex;
+
+  gap: 12px;
+
+  align-items: center;
+
+  font-size: 12px;
+
+  border-radius: 8px;
+
+  transition: 0.25s;
+}
+
+
+.admin-logout:hover {
+  color: var(--red);
+  background: #2B2B2B;
+}
+
+
+/* =========================================================
+   MAIN AREA
+========================================================= */
+
+.admin-main {
+  margin-left: 255px;
+
+  width: calc(100% - 255px);
+
+  background: var(--light-bg);
+
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   TOP NAVBAR
+   SAME STYLE AS GUARD MODULE
+========================================================= */
+
+.admin-navbar {
+  height: 85px;
+
+  background: var(--black);
+
+  border-bottom: 1px solid #333333;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 38px;
+
+  box-sizing: border-box;
+}
+
+
+/* Page title */
+
+.admin-navbar h1 {
+  color: #FFFFFF;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  margin: 0;
+}
+
+
+.admin-navbar p {
+  color: #B8B8B8;
+
+  font-size: 11px;
+
+  margin-top: 5px;
+}
+
+
+/* =========================================================
+   ADMIN PROFILE
+   SAME STYLE AS GUARD MODULE
+========================================================= */
+
+.admin-profile {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.admin-avatar {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: var(--red);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: white;
+
+  font-weight: 700;
+}
+
+
+.admin-profile > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.admin-profile strong {
+  color: #FFFFFF;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.admin-profile span {
+  font-size: 9px;
+
+  color: #999999;
+
+  margin-top: 2px;
+}
+
+
+/* =========================================================
+   ADMIN DASHBOARD
+========================================================= */
+
+.admin-page {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 42px 48px 55px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ADMIN HEADER
+========================================================= */
+
+.admin-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+
+.admin-header h1 {
+  margin: 0;
+
+  color: #182B43;
+
+  font-size: 32px;
+
+  font-weight: 700;
+}
+
+
+.admin-header p {
+  margin: 7px 0 0;
+
+  color: #6D8199;
+
+  font-size: 14px;
+}
+
+
+.admin-badge {
+  padding: 8px 13px;
+
+  border-radius: 20px;
+
+  background: #1A1A1A;
+
+  color: white;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.admin-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 20px;
+}
+
+
+.admin-stat-card {
+  min-height: 120px;
+
+  padding: 18px;
+
+  background: white;
+
+  border: 1px solid #F0F1F3;
+
+  border-radius: 13px;
+
+  box-shadow: 0 5px 18px rgba(20, 25, 35, 0.06);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* Red left border */
+
+.admin-stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: #B22222;
+}
+
+
+/* Stat icon */
+
+.admin-stat-icon {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+.admin-stat-icon svg {
+  width: 21px;
+  height: 21px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* Parking */
+
+.parking-icon,
+.occupied-icon {
+  background: #FBE3E5;
+
+  color: #B22222;
+}
+
+
+/* Visitor */
+
+.visitor-icon {
+  background: #E8EEF5;
+
+  color: #385775;
+}
+
+
+/* Complaint */
+
+.complaint-icon {
+  background: #FFF0D6;
+
+  color: #B76A00;
+}
+
+
+.admin-stat-card p {
+  margin: 0 0 6px;
+
+  color: #7C8796;
+
+  font-size: 10px;
+}
+
+
+.admin-stat-card h2 {
+  margin: 0;
+
+  color: #202B3B;
+
+  font-size: 27px;
+
+  line-height: 1;
+}
+
+
+.stat-label {
+  margin-left: auto;
+
+  align-self: flex-start;
+
+  color: #929BAA;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   CONTENT GRID
+========================================================= */
+
+.admin-content-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+
+.admin-panel {
+  padding: 22px;
+
+  background: white;
+
+  border: 1px solid #F0F1F3;
+
+  border-radius: 14px;
+
+  box-shadow: 0 5px 18px rgba(20, 25, 35, 0.06);
+}
+
+
+/* =========================================================
+   PANEL HEADER
+========================================================= */
+
+.panel-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+
+.panel-header h2 {
+  margin: 0;
+
+  color: #273346;
+
+  font-size: 17px;
+}
+
+
+.panel-header p {
+  margin: 4px 0 0;
+
+  color: #929BAA;
+
+  font-size: 10px;
+}
+
+
+/* Small icon */
+
+.panel-small-icon {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 9px;
+
+  background: #FBE3E5;
+
+  color: #B22222;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.panel-small-icon svg {
+  width: 18px;
+  height: 18px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   PARKING OVERVIEW
+========================================================= */
+
+.parking-progress {
+  margin-bottom: 18px;
+}
+
+
+.progress-info {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+
+  color: #7C8796;
+
+  font-size: 11px;
+}
+
+
+.progress-info strong {
+  color: #273346;
+}
+
+
+.progress-bar {
+  width: 100%;
+
+  height: 9px;
+
+  background: #ECEDEF;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+
+.progress-fill {
+  height: 100%;
+
+  background: #B22222;
+
+  border-radius: 10px;
+}
+
+
+.parking-numbers {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+
+.parking-numbers > div {
+  padding: 11px;
+
+  border-radius: 8px;
+
+  background: #F7F7F8;
+
+  color: #7C8796;
+
+  font-size: 10px;
+}
+
+
+.parking-numbers strong {
+  float: right;
+
+  color: #273346;
+}
+
+
+/* Dots */
+
+.dot {
+  display: inline-block;
+
+  width: 7px;
+  height: 7px;
+
+  margin-right: 6px;
+
+  border-radius: 50%;
+}
+
+
+.red-dot {
+  background: #B22222;
+}
+
+
+.green-dot {
+  background: #42A96D;
+}
+
+
+/* =========================================================
+   COMPLAINTS
+========================================================= */
+
+.complaint-summary {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.summary-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid #EDF0F2;
+
+  color: #7C8796;
+
+  font-size: 11px;
+}
+
+
+.summary-row strong {
+  color: #273346;
+
+  font-size: 15px;
+}
+
+
+.summary-row .pending-number {
+  color: #B76A00;
+}
+
+
+.summary-row .resolved-number {
+  color: #24955B;
+}
+
+
+.summary-row.total-row {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   VISITORS
+========================================================= */
+
+.visitor-panel {
+  min-height: 260px;
+}
+
+
+.visitor-big-number {
+  color: #B22222;
+
+  font-size: 42px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+.visitor-caption {
+  margin: 6px 0 20px;
+
+  color: #929BAA;
+
+  font-size: 10px;
+}
+
+
+.recent-visitors h3 {
+  margin: 0 0 10px;
+
+  color: #273346;
+
+  font-size: 12px;
+}
+
+
+.visitor-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px 0;
+
+  border-bottom: 1px solid #EDF0F2;
+}
+
+
+.visitor-avatar {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: #1A1A1A;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.visitor-row strong {
+  color: #273346;
+
+  font-size: 11px;
+}
+
+
+.visitor-row p {
+  margin: 2px 0 0;
+
+  color: #929BAA;
+
+  font-size: 9px;
+}
+
+
+.no-visitor-data {
+  padding: 20px;
+
+  border-radius: 8px;
+
+  background: #F7F7F8;
+
+  text-align: center;
+
+  color: #929BAA;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   SOCIETY SUMMARY
+========================================================= */
+
+.summary-list {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.summary-list > div {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid #EDF0F2;
+
+  color: #7C8796;
+
+  font-size: 11px;
+}
+
+
+.summary-list > div:last-child {
+  border-bottom: none;
+}
+
+
+.summary-list strong {
+  color: #B22222;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .admin-navbar {
+    padding: 0 24px;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .admin-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .admin-sidebar {
+    width: 72px;
+
+    padding: 20px 10px;
+  }
+
+
+  .admin-logo {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+
+  /* Hide logo text */
+
+  .admin-logo > div:last-child,
+  .admin-menu-title,
+  .admin-nav-item span,
+  .admin-logout span {
+    display: none;
+  }
+
+
+  .admin-nav-item {
+    justify-content: center;
+
+    padding: 13px;
+  }
+
+
+  .admin-nav-item svg {
+    margin: 0;
+  }
+
+
+  .admin-main {
+    margin-left: 72px;
+
+    width: calc(100% - 72px);
+  }
+
+
+  .admin-navbar {
+    padding: 0 20px;
+  }
+
+
+  .admin-profile > div:last-child {
+    display: none;
+  }
+
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+
+  .admin-page {
+    padding: 30px 20px;
+  }
+
+
+  .admin-header {
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+}

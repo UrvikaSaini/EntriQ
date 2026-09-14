@@ -1,0 +1,880 @@
+/* ========================================
+   ENTRIQ LANDING PAGE
+   Theme:
+   Black      #1A1A1A
+   Light      #E0E0E0
+   Red        #B22222
+======================================== */
+
+
+/* ========================================
+   MAIN LANDING PAGE
+======================================== */
+
+.landing-page {
+  margin: 0;
+  min-height: 100vh;
+  min-width: 81.6vw;
+
+  background-color: #E0E0E0;
+  color: #1A1A1A;
+
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+
+/* ========================================
+   NAVIGATION BAR
+======================================== */
+
+.landing-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 40px;
+
+  background: #1A1A1A;
+  border-bottom: 1px solid #1A1A1A;
+}
+
+
+/* BRAND */
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+  color: #B22222;
+}
+
+.brand-name {
+  color: #ffffff;
+}
+
+
+/* NAV BUTTONS */
+
+.nav-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.signin-btn {
+  background: transparent;
+
+  border: 1px solid #E0E0E0;
+
+  color: #ffffff;
+
+  padding: 8px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.signin-btn:hover {
+  background: #E0E0E0;
+  color: #1A1A1A;
+}
+
+.register-btn {
+  background: #B22222;
+
+  border: none;
+
+  color: #ffffff;
+
+  padding: 8px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.register-btn:hover {
+  background: #8F1B1B;
+}
+
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero-section {
+  text-align: center;
+
+  padding: 80px 20px;
+
+  max-width: 800px;
+
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+
+  background: #1A1A1A;
+
+  color: #ffffff;
+
+  padding: 6px 16px;
+
+  border-radius: 20px;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  border: 1px solid #444;
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+
+  margin: 20px 0;
+
+  line-height: 1.2;
+
+  color: #1A1A1A;
+}
+
+.hero-section p {
+  color: #4A4A4A;
+
+  font-size: 1.15rem;
+
+  line-height: 1.6;
+
+  margin-bottom: 30px;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-cta {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 16px;
+}
+
+.btn-hero-primary {
+  background: #B22222;
+
+  color: #ffffff;
+
+  border: none;
+
+  padding: 12px 24px;
+
+  border-radius: 8px;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  transition: 0.2s ease;
+}
+
+.btn-hero-primary:hover {
+  background: #8F1B1B;
+}
+
+.btn-hero-secondary {
+  background: #1A1A1A;
+
+  color: #ffffff;
+
+  border: 1px solid #1A1A1A;
+
+  padding: 12px 24px;
+
+  border-radius: 8px;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.btn-hero-secondary:hover {
+  background: #333333;
+}
+
+
+/* ========================================
+   ROLES SECTION
+======================================== */
+
+.roles-section {
+  padding: 60px 40px;
+
+  background: #1A1A1A;
+
+  text-align: center;
+}
+
+.roles-section h2 {
+  color: #ffffff;
+
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #BDBDBD;
+
+  margin-bottom: 40px;
+}
+
+
+/* ROLES GRID */
+
+.roles-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 24px;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+/* ROLE CARD */
+
+.role-card {
+  background: #E0E0E0;
+
+  padding: 30px;
+
+  margin: 0;
+
+  border-radius: 12px;
+
+  border: 1px solid #555555;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  text-align: left;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #B22222;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ROLE ICON */
+
+.role-icon {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.5rem;
+
+  margin-bottom: 16px;
+}
+
+.role-icon.admin {
+  background: rgba(178, 34, 34, 0.12);
+  color: #B22222;
+}
+
+.role-icon.resident {
+  background: rgba(178, 34, 34, 0.12);
+  color: #B22222;
+}
+
+.role-icon.guard {
+  background: rgba(178, 34, 34, 0.12);
+  color: #B22222;
+}
+
+
+/* ROLE TEXT */
+
+.role-card h3 {
+  margin: 0 0 10px 0;
+
+  font-size: 1.25rem;
+
+  color: #B22222;
+}
+
+.role-card p {
+  color: #1A1A1A;
+
+  font-size: 0.9rem;
+
+  line-height: 1.5;
+
+  margin-bottom: 20px;
+}
+
+.role-btn {
+  color: #B22222;
+
+  font-weight: 600;
+
+  font-size: 0.9rem;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+/* ========================================
+   FEATURES SECTION
+======================================== */
+
+.features-section {
+  padding: 80px 40px;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.features-section h2 {
+  color: #1A1A1A;
+}
+
+
+/* FEATURES GRID */
+
+.features-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 30px;
+
+  margin-top: 40px;
+}
+
+
+/* FEATURE CARD */
+
+.feature-item {
+  background: #1A1A1A;
+
+  padding: 24px;
+
+  border-radius: 12px;
+
+  text-align: left;
+
+  border: 1px solid #B22222;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.feature-icon {
+  font-size: 2rem;
+
+  color: #B22222;
+
+  margin-bottom: 12px;
+}
+
+.feature-item h4 {
+  margin: 0 0 8px 0;
+
+  font-size: 1.1rem;
+
+  color: #ffffff;
+}
+
+.feature-item p {
+  color: #BDBDBD;
+
+  font-size: 0.85rem;
+
+  line-height: 1.5;
+
+  margin: 0;
+}
+
+
+/* ========================================
+   AUTH MODAL OVERLAY
+======================================== */
+
+.modal-overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 1000;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   AUTH MODAL
+======================================== */
+
+.auth-modal {
+  background: #1A1A1A;
+
+  border-radius: 16px;
+
+  width: 100%;
+
+  max-width: 420px;
+
+  padding: 30px;
+
+  position: relative;
+
+  border: 1px solid #444444;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45);
+
+  box-sizing: border-box;
+}
+
+
+/* CLOSE BUTTON */
+
+.modal-close {
+  position: absolute;
+
+  top: 15px;
+
+  right: 20px;
+
+  background: none;
+
+  border: none;
+
+  color: #E0E0E0;
+
+  font-size: 1.8rem;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #B22222;
+}
+
+
+/* ========================================
+   MODAL HEADER
+======================================== */
+
+.modal-header h3 {
+  margin: 0 0 4px 0;
+
+  font-size: 1.4rem;
+
+  color: #ffffff;
+}
+
+.modal-header p {
+  color: #94a3b8;
+
+  font-size: 0.85rem;
+
+  margin: 0 0 20px 0;
+}
+
+.highlight-role {
+  color: #B22222;
+
+  font-weight: 700;
+}
+
+
+/* ========================================
+   AUTH ROLE TABS
+======================================== */
+
+.auth-tabs {
+  display: flex;
+
+  background: #E0E0E0;
+
+  border-radius: 8px;
+
+  padding: 4px;
+
+  margin-bottom: 20px;
+}
+
+.auth-tabs button {
+  flex: 1;
+
+  background: transparent;
+
+  border: none;
+
+  color: #1A1A1A;
+
+  padding: 8px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.auth-tabs button:hover {
+  background: rgba(178, 34, 34, 0.1);
+}
+
+.auth-tabs button.active {
+  background: #B22222;
+
+  color: #ffffff;
+}
+
+
+/* ========================================
+   AUTH FORM
+======================================== */
+
+.auth-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* INPUT GROUP */
+
+.input-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+/* TWO INPUTS IN ONE ROW */
+
+.input-row {
+  display: flex;
+
+  gap: 10px;
+}
+
+.input-row .input-group {
+  flex: 1;
+}
+
+
+/* ========================================
+   FORM LABELS
+======================================== */
+
+.input-group label {
+  font-size: 0.8rem;
+
+  color: #E0E0E0;
+
+  font-weight: 500;
+}
+
+
+/* ========================================
+   FORM INPUTS
+======================================== */
+
+.input-group input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  background: #E0E0E0;
+
+  border: 1px solid #555555;
+
+  /*
+     IMPORTANT:
+     Typed text is DARK so it can be
+     clearly seen on the light background.
+  */
+  color: #1A1A1A;
+
+  padding: 10px 12px;
+
+  border-radius: 6px;
+
+  outline: none;
+
+  font-size: 0.9rem;
+
+  font-family: inherit;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* PLACEHOLDER TEXT */
+
+.input-group input::placeholder {
+  color: #777777;
+
+  opacity: 1;
+}
+
+
+/* INPUT FOCUS */
+
+.input-group input:focus {
+  background: #ffffff;
+
+  color: #1A1A1A;
+
+  border-color: #B22222;
+
+  box-shadow:
+    0 0 0 2px rgba(178, 34, 34, 0.2);
+}
+
+
+/* AUTOFILL FIX */
+
+.input-group input:-webkit-autofill,
+.input-group input:-webkit-autofill:hover,
+.input-group input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #1A1A1A;
+
+  box-shadow:
+    0 0 0 1000px #E0E0E0 inset;
+
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
+
+.btn-submit-auth {
+  background: #B22222;
+
+  color: #ffffff;
+
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  margin-top: 10px;
+
+  font-size: 0.95rem;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-submit-auth:hover {
+  background: #8F1B1B;
+
+  transform: translateY(-1px);
+}
+
+.btn-submit-auth:active {
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   AUTH TOGGLE
+======================================== */
+
+.auth-toggle {
+  text-align: center;
+
+  margin-top: 16px;
+
+  font-size: 0.85rem;
+
+  color: #94a3b8;
+}
+
+.auth-toggle span {
+  color: #B22222;
+
+  cursor: pointer;
+
+  text-decoration: underline;
+
+  font-weight: 600;
+}
+
+.auth-toggle span:hover {
+  color: #D32F2F;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+
+  .landing-page {
+    min-width: 100%;
+  }
+
+  .landing-nav {
+    padding: 16px 20px;
+  }
+
+  .hero-section {
+    padding: 60px 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .roles-section {
+    padding: 50px 20px;
+  }
+
+  .features-section {
+    padding: 60px 20px;
+  }
+
+  .auth-modal {
+    max-width: 95%;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .signin-btn,
+  .register-btn {
+    padding: 7px 12px;
+    font-size: 0.8rem;
+  }
+
+  .hero-section h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 14px;
+  }
+}

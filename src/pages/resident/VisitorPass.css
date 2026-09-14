@@ -1,0 +1,405 @@
+.pass-page {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+.pass-nav{
+  background-color: #1A1A1A;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.pass-nav h2{
+  color: white;
+  margin-right: 1rem;
+}
+.pass-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 1.5rem;
+}
+
+.pass-heading {
+  color: #B22222;
+  margin: 0 0 6px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.pass-subtitle {
+  margin: 0;
+  color: #1A1A1A;
+  font-size: 0.95rem;
+}
+.create-pass-btn {
+  background-color: #B22222;
+  color: #1A1A1A;
+  width: 6rem;
+  height: 3rem;
+  border: none;
+  border-radius: 8px;
+}
+
+.create-pass-btn :hover {
+  background: #c1121f;
+  transform: translateY(-2px);
+}
+
+
+
+/* Alerts */
+.alert-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.error-alert {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.success-alert {
+  background-color: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+
+/* Loading & Empty */
+.pass-loading {
+  text-align: center;
+  padding: 60px 0;
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+.pass-empty {
+  text-align: center;
+  background: #ffffff;
+  padding: 60px 20px;
+  border-radius: 16px;
+  border: 2px dashed #1A1A1A;
+  color: #1A1A1A;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  color: #B22222;
+  margin-bottom: 12px;
+}
+
+.passes-grid {
+  margin: 0 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.pass-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.pass-card.pass-status-cancelled,
+.pass-card.pass-status-expired {
+  opacity: 0.65;
+  background-color: #f8fafc;
+}
+
+.pass-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.pass-badge {
+  background: #db493b;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: uppercase;
+}
+
+.status-active {
+  background-color: #dcfce7;
+  color: #15803d;
+  border-radius: 8px;
+  width: 6rem;
+  height: 1.6rem;
+  text-align: center;
+}
+
+.status-used {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border-radius: 8px;
+  width: 6rem;
+  height: 1.6rem;
+  text-align: center;
+}
+
+.status-expired {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border-radius: 8px;
+  width: 6rem;
+  height: 1.6rem;
+  text-align: center;
+}
+
+.status-cancelled {
+  background-color: #fca5a5;
+  color: #b91c1c;
+  border-radius: 8px;
+  width: 6rem;
+  height: 1.6rem;
+  text-align: center;
+}
+
+
+/* QR Wrapper */
+.qr-container {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.code-box {
+  margin-top: 12px;
+}
+.pass-code-label {
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.pass-code {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 2px;
+}
+
+/* Visitor Details */
+.pass-details {
+  margin-bottom: 16px;
+}
+.pass-details h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+.pass-details p {
+  margin: 3px 0;
+  font-size: 0.88rem;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.validity-time {
+  font-size: 0.78rem !important;
+  color: #64748b !important;
+}
+
+
+/* Actions */
+.pass-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  margin-bottom: 8px;
+}
+
+.copy-btn {
+  flex: 1;
+  background: #db8b30;
+  border: 1px solid #cbd5e1;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.share-btn {
+  flex: 1;
+  background: green;
+  border: 1px solid #cbd5e1;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.pass-btn:hover {
+  background: #e2e8f0;
+}
+.cancel-pass-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+.cancel-pass-btn :hover {
+  background: #fef2f2;
+}
+
+.create-pass-form {
+  position: fixed;
+  top: 10rem;
+  left: 17rem;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #E0E0E0;
+  height: 26rem;
+  width: 26rem;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 1rem;
+}
+
+.form-card {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.form-header {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+.form-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #B22222;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #B22222;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: #c1121f;
+}
+.form-field {
+  margin-bottom: 16px;
+  padding: 0 1rem;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #B22222;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+.form-field input:focus,
+.form-field select:focus {
+  outline: none;
+  border-color: #730f0b ;
+  box-shadow: 0 0 0 3px rgba(115, 15, 11,0.2);
+}
+.form-btns {
+  display: flex;
+  gap: 1rem;
+  margin: 24px;
+}
+.submit-btn {
+  flex: 1;
+  background: #B22222;
+  color: white;
+  border: none;
+  padding: 12px;
+  height: 2.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.submit-btn:hover {
+  background: #c1121f;
+}
+.cancelpass-btn {
+  flex: 1;
+  background: #B22222;
+  border: none;
+  color: #ffffff;
+  padding: 12px;
+  height: 2.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cancelpass-btn:hover {
+  background: #c1121f;
+}

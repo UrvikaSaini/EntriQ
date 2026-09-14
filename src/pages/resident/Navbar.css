@@ -1,0 +1,95 @@
+/* =========================================
+   RESIDENT TOP NAVBAR
+========================================= */
+
+.resident-top-navbar {
+  position: fixed;
+  top: 0;
+  left: 260px;
+  right: 0;
+  height: 76px;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-sizing: border-box;
+  z-index: 80;
+  border-bottom: 1px solid #333333;
+}
+
+/* Brand */
+
+.resident-top-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.resident-top-brand svg {
+  color: #b22222;
+  font-size: 1.65rem;
+}
+
+/* Profile */
+
+.resident-top-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.resident-top-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #b22222;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.resident-top-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.resident-top-user-info strong {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.resident-top-user-info span {
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .resident-top-navbar {
+    left: 0;
+    height: 65px;
+    padding: 0 18px;
+  }
+
+  .resident-top-brand {
+    font-size: 1.2rem;
+  }
+
+  .resident-top-brand svg {
+    font-size: 1.35rem;
+  }
+
+  .resident-top-user-info {
+    display: none;
+  }
+}
