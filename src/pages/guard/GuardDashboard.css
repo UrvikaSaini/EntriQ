@@ -1,16 +1,9 @@
-/* ================================
-   GUARD DASHBOARD
-================================ */
-
 .content {
   padding: 34px 42px;
   min-height: calc(100vh - 90px);
+  min-width: 83vw;
   background: #E0E0E0;
 }
-
-/* ================================
-   WELCOME SECTION
-================================ */
 
 .welcome {
   display: flex;
@@ -69,9 +62,7 @@
   display: block;
 }
 
-/* ================================
-   STATISTICS
-================================ */
+
 
 .stats-grid {
   display: grid;
@@ -85,7 +76,7 @@
   background: #FFFFFF;
   border: 1px solid #D5D5D5;
   border-radius: 15px;
-  box-shadow: 0 5px 18px rgba(25, 25, 25, 0.07);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
   transition: 0.2s ease;
 }
 

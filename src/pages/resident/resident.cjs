@@ -1,6 +1,38 @@
 const express = require('express');
 const router = express.Router();
-const db = require('./db');
+const db = require('./db.cjs');
+
+
+
+// POST /api/resident/register
+router.post('/register', async (req, res) => {
+  const { resName, email, phoneno, password, unit } = req.body;
+
+  try {
+    const [existing] = await db.query('SELECT * FROM resident WHERE email = ?', [email]);
+    if (existing.length > 0) {
+      return res.status(400).json({ message: 'Email already registered' });
+    }
+
+    const query = `
+      INSERT INTO resident (resName, email, phoneno, password, unit, createdAt)
+      VALUES (?, ?, ?, ?, ?, NOW())
+    `;
+    const [result] = await db.query(query, [resName, email, phoneno, password, unit]);
+
+    const newUser = {
+      residentId: result.insertId,
+      resName,
+      email,
+      phoneno,
+      unit
+    };
+
+    return res.status(201).json({ message: 'Registration successful', user: newUser });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+});
 
 
 // PUT /api/resident/:residentId - Update resident profile
@@ -33,7 +65,7 @@ router.get('/:residentId', async (req, res) => {
   try {
     const residentId = req.params.residentId;
     const [rows] = await db.query(
-      `SELECT residentId, resName, email, phoneno, unit, createdAt 
+      `SELECT residentId, resName, email, phoneno, unit,vehicle, createdAt 
        FROM resident 
        WHERE residentId = ?`,
       [residentId]

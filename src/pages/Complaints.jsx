@@ -88,7 +88,6 @@ function Complaints({ complaints, setComplaints, role }) {
           status: "Resolved"
         };
       }
-
       return item;
     });
 
@@ -97,10 +96,8 @@ function Complaints({ complaints, setComplaints, role }) {
 
   return (
     <div className="complaints-page">
-
       {/* PAGE HEADER */}
-
-      <div className="page-header">
+      <div className="comp-page-header">
         <h1>Complaints</h1>
 
         <p>
@@ -141,28 +138,18 @@ function Complaints({ complaints, setComplaints, role }) {
       {/* MAIN CONTENT */}
 
       <div className="complaints-layout">
-
-        {/* FORM */}
-
         <div className="complaint-form-card">
-
           <div className="card-heading">
-
             <div className="heading-icon">
               <ComplaintIcon />
             </div>
-
             <div>
               <h2>Submit a Complaint</h2>
-
               <p>
                 Fill in the details to raise your concern.
               </p>
             </div>
-
           </div>
-
-
           {/* NAME */}
 
           <div className="form-field">
@@ -178,22 +165,14 @@ function Complaints({ complaints, setComplaints, role }) {
                 setNameError("");
               }}
             />
-
             {nameError && (
               <p className="field-error">
                 ⚠ {nameError}
               </p>
             )}
-
           </div>
-
-
-          {/* FLAT NUMBER */}
-
           <div className="form-field">
-
             <label>Flat Number</label>
-
             <input
               type="text"
               placeholder="e.g. A-204"
@@ -211,9 +190,6 @@ function Complaints({ complaints, setComplaints, role }) {
             )}
 
           </div>
-
-
-          {/* COMPLAINT */}
 
           <div className="form-field">
 
@@ -249,13 +225,8 @@ function Complaints({ complaints, setComplaints, role }) {
 
         </div>
 
-
-        {/* COMPLAINT LIST */}
-
         <div className="complaints-list-card">
-
           <div className="card-heading">
-
             <div className="heading-icon">
               <ComplaintIcon />
             </div>
@@ -309,14 +280,11 @@ function Complaints({ complaints, setComplaints, role }) {
 
 
                   <div className="complaint-right">
-
                     <span
                       className={`status-badge ${item.status.toLowerCase()}`}
                     >
                       {item.status}
                     </span>
-
-
                     {role === "admin" &&
                       item.status === "Pending" && (
 
@@ -324,27 +292,17 @@ function Complaints({ complaints, setComplaints, role }) {
                           className="resolve-btn"
                           onClick={() =>
                             resolveComplaint(item.id)
-                          }
-                        >
+                          }>
                           Resolve
                         </button>
-
                     )}
-
                   </div>
-
                 </div>
-
               ))
-
             )}
-
           </div>
-
         </div>
-
       </div>
-
     </div>
   );
 }

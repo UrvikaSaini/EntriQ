@@ -1,6 +1,6 @@
-const express=require('express');
-const router=express.Router();
-const db=require('./db');
+const express = require('express');
+const router = express.Router();
+const db=require('./db.cjs');
 
 // Check-In: Sets entryTime to current timestamp and status to Approved
 router.patch('/:id/entry', async (req, res) => {
@@ -84,4 +84,4 @@ router.get('/:residentId', async (req, res) => {
         return res.status(500).json({ error: "Internal Server Error" });
     }
 });
-module.exports=router;
+module.exports= router;

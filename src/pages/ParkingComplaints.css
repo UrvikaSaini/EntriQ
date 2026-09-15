@@ -1,45 +1,62 @@
-/* =========================
-   PARKING PAGE
-========================= */
-/* =========================
-   FIX PAGE SPACING
-========================= */
-/* =========================
-   PAGE CONTAINER SPACING
-========================= */
-
 .parking-page,
 .complaints-page {
-  width: 100%;
+  width: 82vw;
   max-width: 1400px;
   margin: 0 auto;
   padding: 42px 48px 55px;
   box-sizing: border-box;
 }
 .parking-page {
-  width: 100%;
+  width: 82vw;
   max-width: 1400px;
   margin: 0 auto;
   padding: 42px 48px 55px;
   box-sizing: border-box;
 }
-.parking-page .page-header {
+.parking-page .park-page-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 0 20px 0;
 }
 
-.parking-page .page-header h1 {
+.parking-page .park-page-header h1 {
   margin: 0;
-  color: #182B43;
+  color: #B22222;
   font-size: 32px;
   line-height: 1.15;
 }
 
-.parking-page .page-header p {
+.parking-page .park-page-header p {
   margin: 6px 0 0;
-  color: #6D8199;
+  color: #1A1A1A;
+  font-size: 14px;
+}
+
+.complaints-page {
+  min-width: 82vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 42px 48px 55px;
+  box-sizing: border-box;
+}
+.complaints-page .comp-page-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 20px 0;
+}
+
+.complaints-page .comp-page-header h1 {
+  margin: 0;
+  color: #B22222;
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+.complaints-page .comp-page-header p {
+  margin: 6px 0 0;
+  color: #1A1A1A;
   font-size: 14px;
 }
 
@@ -50,33 +67,6 @@
 .parking-page *::after {
   box-sizing: border-box;
 }
-
-.parking-page {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.parking-page .page-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.parking-page .page-header h1 {
-  margin: 0;
-  color: #182B43;
-  font-size: 32px;
-}
-
-.parking-page .page-header p {
-  margin: 6px 0 0;
-  color: #6D8199;
-  font-size: 14px;
-}
-
-
 /* PARKING HERO */
 
 .dashboard-hero {
@@ -597,9 +587,10 @@
 /* =========================
    COMPLAINTS PAGE
 ========================= */
+
 .complaints-page {
-  width: 100%;
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   padding: 42px 48px 55px;
   box-sizing: border-box;

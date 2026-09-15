@@ -1,9 +1,6 @@
-/* =========================================
-   GLOBAL RESET FOR RESIDENT MODULE
-========================================= */
-
 .resident-app {
-  min-height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
   width: 100%;
   background-color: #e0e0e0;
   color: #172033;
@@ -13,18 +10,14 @@
 .resident-app *,
 .resident-app *::before,
 .resident-app *::after {
-  box-sizing: border-box;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
-/* Do not apply margin to body.
-   The Guard/Admin modules have their own layouts. */
+
 body {
   margin: 0;
 }
-
-/* =========================================
-   RESIDENT LEFT SIDEBAR
-========================================= */
 
 .resident-sidebar {
   position: fixed;
@@ -37,6 +30,8 @@ body {
   flex-direction: column;
   background-color: #1a1a1a;
   color: #ffffff;
+  overflow-y: auto;
+  scrollbar-width: none;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -177,9 +172,6 @@ body {
   font-size: 0.78rem;
 }
 
-/* =========================================
-   RESIDENT TOP NAVBAR
-========================================= */
 
 .resident-top-navbar {
   position: fixed;
@@ -265,10 +257,6 @@ body {
   min-height: calc(100vh - 76px);
 }
 
-/* =========================================
-   REMOVE OLD DUPLICATE NAVBARS
-========================================= */
-
 /* Dashboard old navbar */
 .resident-main-content .dash-header .dash-navbar {
   display: none;
@@ -294,10 +282,6 @@ body {
   display: none;
 }
 
-/* =========================================
-   PAGE CONTENT SPACING
-========================================= */
-
 .resident-main-content .dash-sub-header,
 .resident-main-content .stats-grid,
 .resident-main-content .dash-tabs,
@@ -322,16 +306,21 @@ body {
   font-family: inherit;
 }
 
-/* =========================================
-   MOBILE
-========================================= */
-
 .resident-mobile-toggle-btn {
   display: none;
 }
 
 .resident-sidebar-overlay {
   display: none;
+}
+
+.logout-btn{
+  background: none;
+  color: #ffffff;
+  margin: 1rem;
+}
+.resident-logout :hover{
+  color: #B22222;
 }
 
 @media (max-width: 768px) {

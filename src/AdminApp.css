@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* =========================================================
-   GLOBAL
-========================================================= */
+/* GLOBAL */
 
 * {
   margin: 0;
@@ -14,6 +12,7 @@ body {
   font-family: "Inter", sans-serif;
   background: #E0E0E0;
   color: #1A1A1A;
+  width: 100%;
 }
 
 button {
@@ -23,9 +22,7 @@ button {
 }
 
 
-/* =========================================================
-   ENTRIQ DESIGN SYSTEM
-========================================================= */
+/*ENTRIQ DESIGN SYSTEM */
 
 :root {
   --black: #1A1A1A;
@@ -38,9 +35,7 @@ button {
 }
 
 
-/* =========================================================
-   ADMIN APP
-========================================================= */
+/*ADMIN APP*/
 
 .admin-app {
   min-height: 100vh;
@@ -49,10 +44,7 @@ button {
 }
 
 
-/* =========================================================
-   SIDEBAR
-   SAME STYLE AS YOUR GUARD MODULE
-========================================================= */
+/* ADMIN SIDEBAR */
 
 .admin-sidebar {
   width: 255px;
@@ -76,10 +68,7 @@ button {
 }
 
 
-/* =========================================================
-   LOGO
-   SAME STYLE AS GUARD MODULE
-========================================================= */
+/* LOGO*/
 
 .admin-logo {
   display: flex;
@@ -148,9 +137,7 @@ button {
 }
 
 
-/* =========================================================
-   MENU TITLE
-========================================================= */
+/* MENU TITLE*/
 
 .admin-menu-title {
   font-size: 10px;
@@ -166,10 +153,7 @@ button {
 }
 
 
-/* =========================================================
-   NAVIGATION
-   SAME STYLE AS GUARD MODULE
-========================================================= */
+/* NAVIGATION*/
 
 .admin-nav {
   display: flex;
@@ -253,9 +237,7 @@ button {
 }
 
 
-/* =========================================================
-   SIDEBAR BOTTOM
-========================================================= */
+/*SIDEBAR BOTTOM */
 
 .admin-sidebar-bottom {
   margin-top: auto;
@@ -293,9 +275,7 @@ button {
 }
 
 
-/* =========================================================
-   MAIN AREA
-========================================================= */
+/*MAIN AREA */
 
 .admin-main {
   margin-left: 255px;
@@ -307,11 +287,7 @@ button {
   min-height: 100vh;
 }
 
-
-/* =========================================================
-   TOP NAVBAR
-   SAME STYLE AS GUARD MODULE
-========================================================= */
+/*Admin*/
 
 .admin-navbar {
   height: 85px;
@@ -331,9 +307,7 @@ button {
   box-sizing: border-box;
 }
 
-
 /* Page title */
-
 .admin-navbar h1 {
   color: #FFFFFF;
 
@@ -354,10 +328,7 @@ button {
 }
 
 
-/* =========================================================
-   ADMIN PROFILE
-   SAME STYLE AS GUARD MODULE
-========================================================= */
+/* ADMIN PROFILE */
 
 .admin-profile {
   display: flex;
@@ -388,7 +359,7 @@ button {
 }
 
 
-.admin-profile > div:last-child {
+.admin-profile>div:last-child {
   display: flex;
   flex-direction: column;
 }
@@ -412,9 +383,7 @@ button {
 }
 
 
-/* =========================================================
-   ADMIN DASHBOARD
-========================================================= */
+/*  ADMIN DASHBOARD */
 
 .admin-page {
   width: 100%;
@@ -429,9 +398,7 @@ button {
 }
 
 
-/* =========================================================
-   ADMIN HEADER
-========================================================= */
+/* ADMIN HEADER*/
 
 .admin-header {
   display: flex;
@@ -481,9 +448,7 @@ button {
 }
 
 
-/* =========================================================
-   STAT CARDS
-========================================================= */
+/*STAT CARDS*/
 
 .admin-stats {
   display: grid;
@@ -630,9 +595,7 @@ button {
 }
 
 
-/* =========================================================
-   CONTENT GRID
-========================================================= */
+/*  CONTENT GRID */
 
 .admin-content-grid {
   display: grid;
@@ -656,9 +619,7 @@ button {
 }
 
 
-/* =========================================================
-   PANEL HEADER
-========================================================= */
+/* PANEL HEADER */
 
 .panel-header {
   display: flex;
@@ -724,9 +685,7 @@ button {
 }
 
 
-/* =========================================================
-   PARKING OVERVIEW
-========================================================= */
+/* PARKING OVERVIEW*/
 
 .parking-progress {
   margin-bottom: 18px;
@@ -782,7 +741,7 @@ button {
 }
 
 
-.parking-numbers > div {
+.parking-numbers>div {
   padding: 11px;
 
   border-radius: 8px;
@@ -826,9 +785,7 @@ button {
 }
 
 
-/* =========================================================
-   COMPLAINTS
-========================================================= */
+/* COMPLAINTS */
 
 .complaint-summary {
   display: flex;
@@ -875,10 +832,7 @@ button {
   border-bottom: none;
 }
 
-
-/* =========================================================
-   VISITORS
-========================================================= */
+/* VISITORS */
 
 .visitor-panel {
   min-height: 260px;
@@ -980,9 +934,7 @@ button {
 }
 
 
-/* =========================================================
-   SOCIETY SUMMARY
-========================================================= */
+/* SOCIETY SUMMARY */
 
 .summary-list {
   display: flex;
@@ -991,7 +943,7 @@ button {
 }
 
 
-.summary-list > div {
+.summary-list>div {
   display: flex;
 
   justify-content: space-between;
@@ -1006,7 +958,7 @@ button {
 }
 
 
-.summary-list > div:last-child {
+.summary-list>div:last-child {
   border-bottom: none;
 }
 
@@ -1016,9 +968,7 @@ button {
 }
 
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/* RESPONSIVE */
 
 @media (max-width: 1100px) {
 
@@ -1065,7 +1015,7 @@ button {
 
   /* Hide logo text */
 
-  .admin-logo > div:last-child,
+  .admin-logo>div:last-child,
   .admin-menu-title,
   .admin-nav-item span,
   .admin-logout span {
@@ -1097,7 +1047,7 @@ button {
   }
 
 
-  .admin-profile > div:last-child {
+  .admin-profile>div:last-child {
     display: none;
   }
 

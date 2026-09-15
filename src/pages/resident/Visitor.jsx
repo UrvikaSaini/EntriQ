@@ -4,6 +4,7 @@ import './Visitor.css';
 import { FaSearch, FaUserCheck, FaClock, FaHistory, FaBan,FaShieldAlt } from 'react-icons/fa';
 
 function Visitor({ residentId = 1 }) {
+  const currDateTime=new Date();
   const [visitors, setVisitors] = useState([]);
   const [activeTab, setActiveTab] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -18,7 +19,7 @@ function Visitor({ residentId = 1 }) {
       if (categoryFilter && categoryFilter !== 'all') params.category = categoryFilter;
       if (activeTab && activeTab !== 'all') params.status = activeTab;
 
-      const response = await axios.get(`http://localhost:5000/api/visitors/${residentId}`, { params });
+      const response = await axios.get(`http://localhost:5000/api/resident/${residentId}/visitor_logs`, { params });
       setVisitors(response.data);
       setLoading(false);
     } catch (error) {
@@ -60,14 +61,6 @@ function Visitor({ residentId = 1 }) {
 
   return (
     <div className="visitor-container">
-      <header className="page-header">
-          <div className="brand-logo">
-            <FaShieldAlt className="logo-icon" />
-            <span>EntriQ</span>
-          </div>
-          <h2>Visitors Log</h2>
-      </header>
-
       <div className="visitors-tabs">
         <button className={activeTab === 'all' ? 'tab-btn-active' : 'tab-btn'} onClick={() => setActiveTab('all')}>
           <FaHistory /> All Logs
@@ -137,7 +130,7 @@ function Visitor({ residentId = 1 }) {
                   <td><span className={`category-tag ${(v.type || 'Guest').toLowerCase()}`}>{v.type || 'Guest'}</span></td>
                   <td>{v.vehicle_no || 'N/A'}</td>
                   <td>{v.createdAt ? new Date(v.createdAt).toLocaleDateString() : '--'}</td>
-                  <td>{formatDateTime(v.entryTime)}</td>
+                  <td>{formatDateTime(v.entryTime) ?formatDateTime(v.entryTime): currDateTime.toLocaleString()}</td>
                   <td>{formatDateTime(v.exitTime)}</td>
                   <td>
                     <span className={`status-badge ${(v.status || 'Expected').toLowerCase().replace(/\s+/g, '-')}`}>

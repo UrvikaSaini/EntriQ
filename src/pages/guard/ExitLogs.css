@@ -6,6 +6,8 @@
   padding: 34px 42px;
   min-height: calc(100vh - 90px);
   background: #E0E0E0;
+  min-width: 83vw;
+  margin: 0;
 }
 
 

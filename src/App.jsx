@@ -10,16 +10,12 @@ function App() {
   const navigate = useNavigate();
   const [active, setActive] = useState("Dashboard");
 
-  // =========================
   // PARKING STATE
-  // =========================
   const [slots, setSlots] = useState(() => {
     const savedSlots = localStorage.getItem("parkingSlots");
-
     if (savedSlots) {
       return JSON.parse(savedSlots);
     }
-
     return [
       { id: "A1", status: "Occupied", vehicle: "PB10CD5678" },
       { id: "A2", status: "Available", vehicle: "" },
@@ -85,9 +81,7 @@ function App() {
     localStorage.setItem("complaints", JSON.stringify(complaints));
   }, [complaints]);
 
-  // =========================
   // SIDEBAR MENU
-  // =========================
   const menuItems = [
     {
       name: "Dashboard",
@@ -134,9 +128,7 @@ function App() {
   return (
     <div className="app">
 
-      {/* =========================
-          SIDEBAR
-      ========================= */}
+      //SIDEBAR
       <aside className="sidebar">
 
         <div className="logo">
@@ -187,10 +179,10 @@ function App() {
       {/* =========================
           MAIN AREA
       ========================= */}
-      <main className="main">
+      <main className="guard-main">
 
         {/* NAVBAR */}
-        <header className="navbar">
+        <header className="guard-navbar">
 
           <div className="page-title">
             <h1>{active}</h1>

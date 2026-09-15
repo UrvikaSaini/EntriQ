@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('./db'); // Uses db connection exported from db.js
+const db = require('./db.cjs'); // Uses db connection exported from db.js
 
 // Generate 6-character unique passcode (e.g., "PASS89")
 function generatePassCode() {
@@ -42,7 +42,7 @@ router.get('/:residentId', async (req, res) => {
 });
 
 // POST /api/visitor_passes - Create a new pass
-router.post('/', async (req, res) => {
+/*router.post('/', async (req, res) => {
   try {
     const residentId = req.body.residentId || req.body.residentid || 1;
     const visName = req.body.visName || req.body.visitorName;
@@ -82,6 +82,67 @@ router.post('/', async (req, res) => {
   } catch (error) {
     console.error("Error generating visitor pass:", error);
     res.status(500).json({ error: "Failed to create visitor pass. Verify database connection." });
+  }
+});*/
+
+// POST /api/visitor_passes
+router.post('/', async (req, res) => {
+  const {
+    residentId,
+    residentid,
+    visitorName,
+    visitorPhone,
+    visitorType,
+    validFrom,
+    validUntil
+  } = req.body;
+
+  // Use whichever ID is provided by the frontend payload
+  const activeResId = residentId || residentid || 1;
+  
+  // Generate unique pass code
+  const passCode = `PASS-${Math.floor(1000 + Math.random() * 9000)}`;
+
+  try {
+    // 1. Insert into visitor_passes table
+    const passQuery = `
+      INSERT INTO visitor_passes (residentId, visitorName, visitorPhone, passCode, passType, status, validFrom, validUntil, createdAt)
+      VALUES (?, ?, ?, ?, ?, 'ACTIVE', ?, ?, NOW())
+    `;
+    const [passResult] = await db.query(passQuery, [
+      activeResId,
+      visitorName,
+      visitorPhone,
+      passCode,
+      visitorType || 'Guest',
+      validFrom || new Date(),
+      validUntil
+    ]);
+
+    const createdPassId = passResult.insertId;
+
+    // 2. Automatically log record into visitors table as expected
+    const visitorQuery = `
+      INSERT INTO visitors (residentId, passId, visitorName, visitorPhone, status, createdAt)
+      VALUES (?, ?, ?, ?, 'EXPECTED', NOW())
+    `;
+    await db.query(visitorQuery, [
+      activeResId,
+      createdPassId,
+      visitorName,
+      visitorPhone
+    ]);
+
+    // Send passCode back so line 77 of VisitorPass.jsx displays it correctly
+    res.status(201).json({
+      message: 'Pass created and logged successfully',
+      passId: createdPassId,
+      passCode: passCode,
+      passcode: passCode
+    });
+  } catch (error) {
+    console.error('Error creating visitor pass:', error);
+    res.status(500).json({ message: error.message });
   }
 });
 

@@ -145,16 +145,12 @@ function Parking({ slots, setSlots }) {
 
       {/* HEADER */}
 
-      <div className="page-header">
-
-        <div>
+      <div className="park-page-header">
           <h1>Parking Management</h1>
-
           <p>
             Manage your society parking and vehicles.
           </p>
-        </div>
-
+  
       </div>
 
 

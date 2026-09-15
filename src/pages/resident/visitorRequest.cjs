@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('./db');
+const db = require('./db.cjs');
 
 // 1. GET requests for a specific resident (Pending / All)
 router.get('/resident/:residentId', async (req, res) => {

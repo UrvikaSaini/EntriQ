@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-/* =========================
-   GLOBAL
-========================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +9,7 @@ body {
   font-family: "Inter", sans-serif;
   background: #E0E0E0;
   color: #1A1A1A;
+  margin-right: 0;
 }
 
 button {
@@ -22,9 +18,6 @@ button {
   border: none;
 }
 
-/* =========================
-   ENTRIQ DESIGN SYSTEM
-========================= */
 
 :root {
   --black: #1A1A1A;
@@ -36,21 +29,14 @@ button {
   --text-gray: #999999;
 }
 
-/* =========================
-   APP
-========================= */
-
 .app {
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
 }
 
-/* =========================
-   SIDEBAR
-========================= */
-
 .sidebar {
-  width: 255px;
+  width: 260px;
   min-height: 100vh;
   background: var(--black);
   color: white;
@@ -61,11 +47,8 @@ button {
   left: 0;
   top: 0;
   bottom: 0;
+  z-index: 100;
 }
-
-/* =========================
-   LOGO
-========================= */
 
 .logo {
   display: flex;
@@ -75,22 +58,15 @@ button {
   margin-bottom: 45px;
 }
 
-/* Shield icon ONLY
-   No background / no rectangle */
-
 .logo-icon {
   width: 32px;
   height: 32px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: var(--red);
-
   background: transparent;
   box-shadow: none;
-
   flex-shrink: 0;
 }
 
@@ -120,9 +96,7 @@ button {
   margin-top: 3px;
 }
 
-/* =========================
-   MENU
-========================= */
+/*MENU*/
 
 .menu-title {
   font-size: 10px;
@@ -144,21 +118,14 @@ nav {
   display: flex;
   align-items: center;
   gap: 14px;
-
   padding: 13px 14px;
-
   border-radius: 10px;
-
   background: transparent;
   color: #999999;
-
   font-size: 13px;
   font-weight: 500;
-
   text-align: left;
-
   transition: 0.25s;
-
   position: relative;
 }
 
@@ -174,15 +141,11 @@ nav {
 
 .menu-item.active::before {
   content: "";
-
   width: 3px;
   height: 20px;
-
   background: #FFFFFF;
-
   position: absolute;
   left: 0;
-
   border-radius: 0 5px 5px 0;
 }
 
@@ -192,29 +155,19 @@ nav {
   text-align: center;
 }
 
-/* =========================
-   SIDEBAR BOTTOM
-========================= */
-
 .sidebar-bottom {
   margin-top: auto;
 }
 
-
 .logout {
   width: 100%;
-
   background: transparent;
   color: #999999;
-
   padding: 12px;
-
   text-align: left;
-
   display: flex;
   gap: 12px;
   align-items: center;
-
   font-size: 12px;
 }
 
@@ -222,50 +175,30 @@ nav {
   color: var(--red);
 }
 
-/* =========================
-   MAIN
-========================= */
-
-.main {
-  margin-left: 255px;
-
-  width: calc(100% - 255px);
-
+.guard-main {
+  margin-left : 180px;
   background: var(--light-bg);
-
   min-height: 100vh;
 }
 
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar {
+.guard-navbar {
   height: 85px;
-
   background: var(--black);
-
   border-bottom: 1px solid #333333;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  box-sizing: border-box;
   padding: 0 38px;
 }
-
 .page-title h1 {
   color: #FFFFFF;
-
   font-size: 19px;
   font-weight: 700;
 }
-
 .page-title p {
   color: #B8B8B8;
-
   font-size: 11px;
-
   margin-top: 5px;
 }
 
@@ -275,42 +208,25 @@ nav {
   gap: 22px;
 }
 
-/* =========================
-   NOTIFICATION
-========================= */
-
 .notification {
   position: relative;
-
   background: #2B2B2B;
   color: #FFFFFF;
-
   width: 39px;
   height: 39px;
-
   border-radius: 10px;
 }
 
 .notification-dot {
   position: absolute;
-
   width: 7px;
   height: 7px;
-
   border-radius: 50%;
-
   background: var(--red);
-
   right: 8px;
   top: 7px;
-
   border: 2px solid white;
 }
-
-/* =========================
-   PROFILE
-========================= */
-
 .profile {
   display: flex;
   align-items: center;
@@ -320,15 +236,11 @@ nav {
 .avatar {
   width: 38px;
   height: 38px;
-
   border-radius: 50%;
-
   background: var(--red);
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: white;
   font-weight: 700;
 }
@@ -352,26 +264,20 @@ nav {
   color: #999999;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
 @media (max-width: 900px) {
-
   .navbar {
     padding: 0 24px;
   }
 
 }
 
-/* =========================
-   MOBILE
-========================= */
+/*MOBILE*/
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
   .sidebar {
-    width: 72px;
+    z-index:100;
+    width: 80px;
     padding: 20px 10px;
   }
 
@@ -395,12 +301,13 @@ nav {
     padding: 13px;
   }
 
-  .main {
-    margin-left: 72px;
-    width: calc(100% - 72px);
+  .guard-main {
+    margin-left: 0;
+    width: calc(100% - 0px);
   }
 
-  .navbar {
+  .guard-navbar {
+    margin-left:0rem;
     padding: 0 20px;
   }
 
@@ -408,5 +315,4 @@ nav {
   .arrow {
     display: none;
   }
-
 }

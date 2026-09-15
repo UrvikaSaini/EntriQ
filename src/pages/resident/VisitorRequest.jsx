@@ -56,15 +56,6 @@ function VisitorRequest({ residentId = 1 }) {
 
   return (
     <div className="requests-container">
-      <nav className="pass-nav">
-        <div className="brand-logo">
-          <FaShieldAlt className="logo-icon" />
-          <span>EntriQ</span>
-        </div>
-        <h2><FaUserClock />Visitor Requests</h2>
-      </nav>
-      
-
       <div className="table-card">
         {loading ? (
           <div className="loading-state">Loading Gate Requests...</div>

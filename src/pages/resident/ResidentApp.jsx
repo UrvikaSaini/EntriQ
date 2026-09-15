@@ -2,18 +2,14 @@ import { useState } from "react";
 
 import Navigation from "./Navigation.jsx";
 import Navbar from "./Navbar.jsx";
-
 import Visitor from "./Visitor.jsx";
 import Dashboard from "./Dashboard.jsx";
 import VisitorPass from "./VisitorPass.jsx";
 import Profile from "./Profile.jsx";
 import VisitorRequest from "./VisitorRequest.jsx";
-import CreateVisitor from "./CreateVisitor.jsx";
-
 import Parking from "../Parking.jsx";
 import Complaints from "../Complaints.jsx";
-
-import "./App.css";
+import "./ResApp.css";
 import "../ParkingComplaints.css";
 
 function ResidentApp() {
@@ -112,9 +108,10 @@ function ResidentApp() {
       <Navigation
         activeTab={activeTab}
         setActiveTab={setActiveTab}
+        residentId={1}
       />
 
-      <Navbar />
+      <Navbar residentId={1}/>
 
       <main className="resident-main-content">
         {activeTab === "dashboard" && (
@@ -127,10 +124,6 @@ function ResidentApp() {
 
         {activeTab === "myVisitors" && (
           <Visitor residentId={1} />
-        )}
-
-        {activeTab === "createVisitors" && (
-          <CreateVisitor residentId={1} />
         )}
 
         {activeTab === "visitorPass" && (

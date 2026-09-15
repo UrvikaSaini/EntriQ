@@ -1,32 +1,12 @@
-/* ========================================
-   ENTRIQ LANDING PAGE
-   Theme:
-   Black      #1A1A1A
-   Light      #E0E0E0
-   Red        #B22222
-======================================== */
-
-
-/* ========================================
-   MAIN LANDING PAGE
-======================================== */
 
 .landing-page {
   margin: 0;
   min-height: 100vh;
-  min-width: 81.6vw;
-
+  min-width: 100vw;
   background-color: #E0E0E0;
   color: #1A1A1A;
-
   font-family: system-ui, -apple-system, sans-serif;
 }
-
-
-/* ========================================
-   NAVIGATION BAR
-======================================== */
-
 .landing-nav {
   display: flex;
   justify-content: space-between;

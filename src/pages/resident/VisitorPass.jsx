@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { QRCodeSVG } from 'qrcode.react';
-import { FaTicketAlt, FaPlus, FaQrcode, FaShareAlt, FaCopy, FaCheck, FaBan, FaExclamationCircle, FaTimes ,FaShieldAlt} from 'react-icons/fa';
+import { FaTicketAlt, FaPlus, FaQrcode, FaShareAlt, FaCopy, FaCheck, FaBan, FaExclamationCircle, FaTimes, FaShieldAlt } from 'react-icons/fa';
 import './VisitorPass.css';
 
 export default function VisitorPass({ residentId = 1, residentid }) {
@@ -126,22 +126,6 @@ export default function VisitorPass({ residentId = 1, residentid }) {
     };
     return (
         <div className="pass-page">
-            <nav className="pass-nav">
-                <div className="brand-logo">
-                    <FaShieldAlt className="logo-icon" />
-                    <span>EntriQ</span>
-                </div>
-                <h2>Visitor Pass</h2>
-            </nav>
-            <header className="pass-header">
-                <div className="pass-head-lines">
-                    <p className="pass-subtitle">Generate digital QR codes and Passcodes for Direct Gate Verification.</p>
-                </div>
-                <button className="create-pass-btn" onClick={() => { setErrorMsg(''); setShowModal(true); }}>
-                    <FaPlus /> Create Pass
-                </button>
-            </header>
-
             {errorMsg && (
                 <div className="alert-banner error-alert">
                     <FaExclamationCircle /> {errorMsg}
@@ -217,42 +201,41 @@ export default function VisitorPass({ residentId = 1, residentid }) {
                 </div >
             )}
             {showModal && (
-                <div className="create-pass-form">
-                    <div className="form-card">
-                        <div className="form-header">
+                <div className="vis-pass-form">
+                    <div className="vis-form-card">
+                        <div className="vis-form-header">
                             <h3>Generate QR Pass</h3>
                             <button className="close-btn" onClick={() => setShowModal(false)}>
                                 <FaTimes />
                             </button>
                         </div>
                         <form onSubmit={handleCreatePass}>
-                            <div className="form-field">
+                            <div className="vis-form-field">
                                 <label>Visitor Name </label>
                                 <input type="text" name="visitorName" placeholder="e.g. Kayra Mehra" required value={formData.visitorName} onChange={handleChange} />
                             </div>
-                            <div className="form-field">
+                            <div className="vis-form-field">
                                 <label>Visitor Phone </label>
                                 <input type="tel" name="visitorPhone" placeholder="e.g. 9876543210" required value={formData.visitorPhone} onChange={handleChange} />
                             </div>
-                            <div className="form-field">
+                            <div className="vis-form-field">
                                 <label>Category / Purpose</label>
                                 <select name="visitorType" value={formData.visitorType} onChange={handleChange}>
                                     <option value="Guest">Guest</option>
                                     <option value="Delivery">Delivery</option>
                                     <option value="Cab">Cab</option>
                                     <option value="Service">Service Provider</option>
-                                    <option value="Maintenance">Maintenance</option>
                                 </select>
                             </div>
-                            <div className="form-field">
+                            <div className="vis-form-field">
                                 <label>Valid From</label>
                                 <input type="datetime-local" name="validFrom" value={formData.validFrom} onChange={handleChange} />
                             </div>
-                            <div className="form-field">
+                            <div className="vis-form-field">
                                 <label>Valid Until *</label>
                                 <input type="datetime-local" name="validUntil" required value={formData.validUntil} onChange={handleChange} />
                             </div>
-                            <div className="form-btns">
+                            <div className="vis-form-btns">
                                 <button type="submit" className="submit-btn" onClick={handleCreatePass} disabled={submitting}>
                                     <FaQrcode /> {submitting ? 'Generating...' : 'Generate QR Pass'}
                                 </button>
@@ -264,6 +247,12 @@ export default function VisitorPass({ residentId = 1, residentid }) {
                     </div>
                 </div>
             )}
+            <div className="pass-footer">
+                <button className="create-pass-btn" onClick={() => { setErrorMsg(''); setShowModal(true); }}>
+                    <FaPlus /> Create Pass
+                </button>
+            </div>
+
         </div >
     );
 }

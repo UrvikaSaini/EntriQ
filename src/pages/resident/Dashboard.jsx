@@ -1,29 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-import {
-  FaUser,
-  FaHome,
-  FaBell,
-  FaCheckCircle,
-  FaTimesCircle,
-  FaBoxOpen,
-  FaClock,
-  FaSync,
-  FaDoorOpen,
-  FaHistory,
-  FaQrcode,
-  FaPhoneAlt,
-  FaEnvelope
-} from "react-icons/fa";
-
+import {FaUser, FaHome, FaBell, FaCheckCircle, FaTimesCircle, FaBoxOpen, FaClock, FaSync, FaDoorOpen, FaHistory, FaQrcode, FaPhoneAlt, FaEnvelope} from "react-icons/fa";
 import "./Dashboard.css";
 
 function Dashboard({ residentId = 1 }) {
+  const currDateTime=new Date();
   const [activeTab, setActiveTab] = useState("overview");
-
   const [resident, setResident] = useState(null);
-
   const [stats, setStats] = useState({
     pendingCount: 0,
     activePassesCount: 0,
@@ -33,14 +16,11 @@ function Dashboard({ residentId = 1 }) {
 
   const [pendingRequests, setPendingRequests] = useState([]);
   const [visitorLogs, setVisitorLogs] = useState([]);
-
   const [loading, setLoading] = useState(true);
-
   const [actionMsg, setActionMsg] = useState({
     text: "",
     type: ""
   });
-
   const showBanner = (text, type) => {
     setActionMsg({ text, type });
 
@@ -48,7 +28,6 @@ function Dashboard({ residentId = 1 }) {
       setActionMsg({ text: "", type: "" });
     }, 4000);
   };
-
   const fetchDashboardData = async () => {
     try {
       setLoading(true);
@@ -170,7 +149,7 @@ function Dashboard({ residentId = 1 }) {
   };
 
   return (
-    <div className="resident-dashboard-content">
+    <div className="res-dash-container">
       {actionMsg.text && (
         <div
           className={`dash-alert ${
@@ -187,7 +166,7 @@ function Dashboard({ residentId = 1 }) {
       <div className="dash-sub-header">
         <div>
           <h1>
-            Welcome Back, {resident?.resName || "Resident"}!
+            Welcome Back, <span className="resident-name">{resident?.resName || "Resident"}!</span>
           </h1>
 
           <p>
@@ -195,24 +174,13 @@ function Dashboard({ residentId = 1 }) {
             and Monitor History.
           </p>
         </div>
-
-        <button
-          type="button"
-          className="refresh-btn"
-          onClick={fetchDashboardData}
-          disabled={loading}
-        >
-          <FaSync className={loading ? "spin" : ""} />
-          Refresh
-        </button>
       </div>
 
       {/* Statistics Cards */}
       <div className="stats-grid">
         <div
           className="stat-card pending-card"
-          onClick={() => setActiveTab("overview")}
-        >
+          onClick={() => setActiveTab("overview")}>
           <div className="stat-icon">
             <FaBell />
           </div>
@@ -275,8 +243,7 @@ function Dashboard({ residentId = 1 }) {
           className={`tab-btn ${
             activeTab === "history" ? "active" : ""
           }`}
-          onClick={() => setActiveTab("history")}
-        >
+          onClick={() => setActiveTab("history")}>
           <FaHistory />
           Visitor History Log
         </button>
@@ -286,8 +253,7 @@ function Dashboard({ residentId = 1 }) {
           className={`tab-btn ${
             activeTab === "profile" ? "active" : ""
           }`}
-          onClick={() => setActiveTab("profile")}
-        >
+          onClick={() => setActiveTab("profile")}>
           <FaUser />
           My Flat Profile
         </button>
@@ -303,24 +269,19 @@ function Dashboard({ residentId = 1 }) {
           {pendingRequests.length === 0 ? (
             <div className="empty-box">
               <FaCheckCircle className="empty-state-icon" />
-
-              <p>
-                No Pending Gate Approval Requests at the moment.
-              </p>
+              <p>No Pending Gate Approval Requests at the moment.</p>
             </div>
           ) : (
             <div className="requests-grid">
               {pendingRequests.map((request) => (
                 <div
                   key={request.id}
-                  className="request-card"
-                >
+                  className="request-card">
                   <div className="req-header">
                     <span
                       className={`req-type type-${(
                         request.type || "Guest"
-                      ).toLowerCase()}`}
-                    >
+                      ).toLowerCase()}`}>
                       {request.type || "Guest"}
                     </span>
 
@@ -355,12 +316,10 @@ function Dashboard({ residentId = 1 }) {
                           request.id,
                           "Approved"
                         )
-                      }
-                    >
+                      }>
                       <FaCheckCircle />
                       Approve
                     </button>
-
                     <button
                       type="button"
                       className="action-btn leave-btn"
@@ -368,9 +327,7 @@ function Dashboard({ residentId = 1 }) {
                         handleRequestAction(
                           request.id,
                           "Leave At Gate"
-                        )
-                      }
-                    >
+                        )}>
                       <FaBoxOpen />
                       Leave at Gate
                     </button>
@@ -383,8 +340,7 @@ function Dashboard({ residentId = 1 }) {
                           request.id,
                           "Denied"
                         )
-                      }
-                    >
+                      }>
                       <FaTimesCircle />
                       Deny
                     </button>
@@ -406,7 +362,6 @@ function Dashboard({ residentId = 1 }) {
           {visitorLogs.length === 0 ? (
             <div className="empty-box">
               <FaHistory className="empty-state-icon" />
-
               <p>No Past Visitor Recorded yet.</p>
             </div>
           ) : (
@@ -453,7 +408,7 @@ function Dashboard({ residentId = 1 }) {
                           ? new Date(
                               log.entryTime
                             ).toLocaleString()
-                          : "—"}
+                          : currDateTime.toLocaleString()}
                       </td>
 
                       <td>
@@ -461,7 +416,7 @@ function Dashboard({ residentId = 1 }) {
                           ? new Date(
                               log.exitTime
                             ).toLocaleString()
-                          : "Still Inside"}
+                          : "--"}
                       </td>
                     </tr>
                   ))}
@@ -474,7 +429,7 @@ function Dashboard({ residentId = 1 }) {
 
       {/* Profile Tab */}
       {activeTab === "profile" && (
-        <section className="tab-section profile-container">
+        <section className="tab-section dash-profile-container">
           <h2 className="section-title">
             Resident & Flat Information
           </h2>
