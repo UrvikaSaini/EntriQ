@@ -8,6 +8,8 @@ const visitorRoute=require("./visitor.cjs");
 const residentRoute=require("./resident.cjs");
 const visitorPassRoute=require("./visitorPass.cjs");
 const visitorRequestRoute=require("./visitorRequest.cjs");
+const parkingRoute = require('./parking.cjs');
+const complaintsRoute = require('./complaints.cjs');
 
 const app=express();
 app.use(cors());
@@ -16,6 +18,8 @@ app.use('/api/visitors',visitorRoute);
 app.use('/api/resident',residentRoute);
 app.use('/api/visitor_passes',visitorPassRoute);
 app.use('/api/visitor_requests',visitorRequestRoute);
+app.use('/api/parking', parkingRoute);
+app.use('/api/complaints', complaintsRoute);
 
 const Port=process.env.PORT|| 5000;
 app.listen(Port,()=>{

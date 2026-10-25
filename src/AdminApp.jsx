@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import {
   FaShieldAlt,
@@ -14,108 +15,43 @@ import Complaints from "./pages/Complaints";
 
 import "./AdminApp.css";
 
-function AdminApp() {
+import { useDispatch, useSelector } from "react-redux";
+import { fetchParkingSlots } from "./store/parkingSlice";
+import { fetchComplaints } from "./store/complaintsSlice";
 
+import {
+  AdminProvider,
+  useAdmin
+} from "./context/AdminContext";
+
+function AdminContent() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { admin } = useAdmin();
+
+  useEffect(() => {
+    dispatch(fetchParkingSlots());
+    dispatch(fetchComplaints());
+  }, [dispatch]);
+
+  const slots = useSelector((state) => state.parking.slots);
+
+  const complaints = useSelector(
+    (state) => state.complaints.complaints
+  );
 
   const [page, setPage] = useState("admin");
-
-  // PARKING DATA
-  const [slots, setSlots] = useState(() => {
-
-    const savedSlots = localStorage.getItem("parkingSlots");
-
-    if (savedSlots) {
-      return JSON.parse(savedSlots);
-    }
-
-    return [
-      { id: "A1", status: "Occupied", vehicle: "PB10CD5678" },
-      { id: "A2", status: "Available", vehicle: "" },
-      { id: "A3", status: "Occupied", vehicle: "PB10AB1234" },
-      { id: "A4", status: "Available", vehicle: "" },
-      { id: "A5", status: "Occupied", vehicle: "PB10XY4567" },
-
-      { id: "B1", status: "Available", vehicle: "" },
-      { id: "B2", status: "Occupied", vehicle: "PB10MN9876" },
-      { id: "B3", status: "Available", vehicle: "" },
-      { id: "B4", status: "Available", vehicle: "" },
-      { id: "B5", status: "Occupied", vehicle: "PB10PQ3456" },
-
-      { id: "C1", status: "Occupied", vehicle: "PB10AA1111" },
-      { id: "C2", status: "Available", vehicle: "" },
-      { id: "C3", status: "Occupied", vehicle: "PB10BB2222" },
-      { id: "C4", status: "Available", vehicle: "" },
-      { id: "C5", status: "Available", vehicle: "" },
-
-      { id: "D1", status: "Occupied", vehicle: "PB10CC3333" },
-      { id: "D2", status: "Available", vehicle: "" },
-      { id: "D3", status: "Occupied", vehicle: "PB10DD4444" },
-      { id: "D4", status: "Available", vehicle: "" },
-      { id: "D5", status: "Occupied", vehicle: "PB10EE5555" }
-    ];
-  });
-
-
-  // COMPLAINT DATA
-  const [complaints, setComplaints] = useState(() => {
-
-    const savedComplaints = localStorage.getItem("complaints");
-
-    if (savedComplaints) {
-      return JSON.parse(savedComplaints);
-    }
-
-    return [
-      {
-        id: 1,
-        name: "Rahul Sharma",
-        flatNo: "A-204",
-        complaint: "Water supply issue in Block A",
-        status: "Pending"
-      },
-      {
-        id: 2,
-        name: "Simran Kaur",
-        flatNo: "B-103",
-        complaint: "Street light is not working",
-        status: "Resolved"
-      }
-    ];
-  });
-
-
-  // SAVE PARKING DATA
-  useEffect(() => {
-    localStorage.setItem(
-      "parkingSlots",
-      JSON.stringify(slots)
-    );
-  }, [slots]);
-
-
-  // SAVE COMPLAINT DATA
-  useEffect(() => {
-    localStorage.setItem(
-      "complaints",
-      JSON.stringify(complaints)
-    );
-  }, [complaints]);
-
 
   const handleLogout = () => {
     navigate("/");
   };
 
-
   return (
     <div className="admin-app">
-
       {/* SIDEBAR */}
       <aside className="admin-sidebar">
-
         <div className="admin-logo">
-
           <div className="admin-logo-icon">
             <FaShieldAlt />
           </div>
@@ -124,18 +60,13 @@ function AdminApp() {
             <h2>EntriQ</h2>
             <span>Admin Portal</span>
           </div>
-
         </div>
-
 
         <div className="admin-menu-title">
           MAIN MENU
         </div>
 
-
         <nav className="admin-nav">
-
-          {/* ADMIN DASHBOARD */}
           <button
             className={
               page === "admin"
@@ -148,8 +79,6 @@ function AdminApp() {
             <span>Admin Dashboard</span>
           </button>
 
-
-          {/* PARKING */}
           <button
             className={
               page === "parking"
@@ -162,8 +91,6 @@ function AdminApp() {
             <span>Parking</span>
           </button>
 
-
-          {/* COMPLAINTS */}
           <button
             className={
               page === "complaints"
@@ -175,13 +102,10 @@ function AdminApp() {
             <FaClipboardList />
             <span>Complaints</span>
           </button>
-
         </nav>
-
 
         {/* LOGOUT */}
         <div className="admin-sidebar-bottom">
-
           <button
             className="admin-logout"
             onClick={handleLogout}
@@ -189,18 +113,13 @@ function AdminApp() {
             <FaSignOutAlt />
             <span>Logout</span>
           </button>
-
         </div>
-
       </aside>
-
 
       {/* MAIN CONTENT */}
       <main className="admin-main">
-
         {/* TOP BAR */}
         <header className="admin-navbar">
-
           <div>
             <h1>
               {page === "admin" && "Admin Dashboard"}
@@ -209,29 +128,23 @@ function AdminApp() {
             </h1>
 
             <p>
-              Welcome back, Admin 👋
+              Welcome back, {admin.name} 👋
             </p>
           </div>
 
-
           <div className="admin-profile">
-
             <div className="admin-avatar">
               A
             </div>
 
             <div>
-              <strong>Administrator</strong>
-              <span>Admin</span>
+              <strong>{admin.name}</strong>
+              <span>{admin.role}</span>
             </div>
-
           </div>
-
         </header>
 
-
         {/* PAGE CONTENT */}
-
         {page === "admin" && (
           <Admin
             slots={slots}
@@ -239,26 +152,21 @@ function AdminApp() {
           />
         )}
 
-
-        {page === "parking" && (
-          <Parking
-            slots={slots}
-            setSlots={setSlots}
-          />
-        )}
-
+        {page === "parking" && <Parking />}
 
         {page === "complaints" && (
-          <Complaints
-            complaints={complaints}
-            setComplaints={setComplaints}
-            role="admin"
-          />
+          <Complaints role="admin" />
         )}
-
       </main>
-
     </div>
+  );
+}
+
+function AdminApp() {
+  return (
+    <AdminProvider>
+      <AdminContent />
+    </AdminProvider>
   );
 }
 
