@@ -26,4 +26,10 @@ export const guardApi = {
 
   exitLogs: () =>
     API.get("/exits"),
+  createVisitor: (data) => API.post("/visitors", data),
+getVisitors: () => API.get("/visitors"),
+getVisitor: (id) => API.get(`/visitor/${id}`),
+
+recordEntry: (id) => API.post(`/visitor/${id}/entry`),
+deleteVisitor: (id) => API.delete(`/visitors/${id}`),
 };

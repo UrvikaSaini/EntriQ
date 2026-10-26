@@ -1,100 +1,127 @@
-.content {
-  padding: 34px 42px;
-  min-height: calc(100vh - 90px);
-  min-width: 83vw;
+
+/* =========================================
+   GUARD DASHBOARD
+========================================= */
+
+.guard-dashboard {
+  width: 100%;
+  min-width: 0;
+  min-height: calc(100vh - 85px);
+  padding: 32px 40px;
+  box-sizing: border-box;
   background: #E0E0E0;
+  overflow-x: clip;
 }
 
-.welcome {
+/* =========================================
+   WELCOME BANNER
+========================================= */
+
+.guard-dashboard .welcome {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
   padding: 32px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   background: #1A1A1A;
   border-radius: 18px;
   color: #FFFFFF;
-  box-shadow: 0 6px 20px rgba(25, 25, 25, 0.10);
+  box-shadow: 0 6px 20px rgba(25, 25, 25, 0.1);
 }
 
-.welcome-label {
+.guard-dashboard .welcome > div:first-child {
+  min-width: 0;
+}
+
+.guard-dashboard .welcome-label {
   color: #B22222;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1.5px;
 }
 
-.welcome h2 {
+.guard-dashboard .welcome h2 {
   margin: 8px 0 10px;
-  font-size: 30px;
-  line-height: 1.2;
   color: #FFFFFF;
+  font-size: 30px;
+  line-height: 1.25;
   font-weight: 800;
 }
 
-.welcome h2 span {
+.guard-dashboard .welcome h2 span {
   color: #B22222;
 }
 
-.welcome p {
+.guard-dashboard .welcome p {
   margin: 0;
   color: #C8C8C8;
   font-size: 14px;
+  line-height: 1.6;
 }
 
-/* Shield icon - no background box/circle */
+/* Shield icon */
 
-.shield {
+.guard-dashboard .shield {
   width: 80px;
   height: 80px;
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background: transparent;
-  border-radius: 0;
   color: #B22222;
-  flex-shrink: 0;
 }
 
-.shield svg {
+.guard-dashboard .shield svg {
   width: 58px;
   height: 58px;
   display: block;
 }
 
+/* =========================================
+   STATISTICS
+========================================= */
 
-
-.stats-grid {
+.guard-dashboard .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-bottom: 30px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 38px;
+  margin-left: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.stat-card {
-  padding: 21px;
+.guard-dashboard .stat-card {
+  min-width: 0;
+  padding: 22px;
+  box-sizing: border-box;
   background: #FFFFFF;
   border: 1px solid #D5D5D5;
   border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-  transition: 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.stat-card:hover {
+.guard-dashboard .stat-card:hover {
   border-color: #B22222;
   transform: translateY(-3px);
-  box-shadow: 0 8px 22px rgba(25, 25, 25, 0.10);
+  box-shadow: 0 8px 22px rgba(25, 25, 25, 0.1);
 }
 
-.stat-top {
+.guard-dashboard .stat-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 8px;
 }
 
-.stat-icon {
+.guard-dashboard .stat-icon {
   width: 44px;
   height: 44px;
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,103 +129,111 @@
   font-size: 20px;
 }
 
-.stat-icon.red {
+.guard-dashboard .stat-icon.red {
   background: #F4E5E5;
   color: #B22222;
 }
 
-.stat-card h3 {
-  margin: 18px 0 4px;
+.guard-dashboard .stat-card h3 {
+  margin: 18px 0 5px;
   color: #1A1A1A;
-  font-size: 27px;
+  font-size: 28px;
   font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
-.stat-card p {
+.guard-dashboard .stat-card p {
   margin: 0;
   color: #777777;
   font-size: 13px;
+  line-height: 1.5;
 }
 
-.trend,
-.safe,
-.pending {
+.guard-dashboard .trend,
+.guard-dashboard .safe,
+.guard-dashboard .pending {
   font-size: 11px;
   font-weight: 700;
 }
 
-.trend {
+.guard-dashboard .trend,
+.guard-dashboard .safe {
   color: #2E9B4B;
 }
 
-.safe {
-  color: #2E9B4B;
-}
-
-.pending {
+.guard-dashboard .pending {
   color: #9A741F;
 }
 
-/* ================================
-   SECTION HEADER
-================================ */
+/* =========================================
+   SECTION HEADERS
+========================================= */
 
-.section-header {
+.guard-dashboard .section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
-.section-header h2 {
+.guard-dashboard .section-header h2 {
   margin: 0;
   color: #1A1A1A;
   font-size: 20px;
   font-weight: 800;
 }
 
-.section-header p {
+.guard-dashboard .section-header p {
   margin: 5px 0 0;
   color: #777777;
   font-size: 13px;
+  line-height: 1.5;
 }
 
-/* ================================
+/* =========================================
    QUICK ACTIONS
-================================ */
+========================================= */
 
-.actions-grid {
+.guard-dashboard .actions-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  margin-bottom: 30px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 36px;
 }
 
-.action-card {
-  min-height: 145px;
-  padding: 19px;
+.guard-dashboard .action-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 150px;
+  padding: 20px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 12px;
   background: #FFFFFF;
   border: 1px solid #D5D5D5;
   border-radius: 15px;
   text-align: left;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(25, 25, 25, 0.06);
-  transition: 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.action-card:hover {
+.guard-dashboard .action-card:hover {
   border-color: #B22222;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(25, 25, 25, 0.10);
+  box-shadow: 0 8px 20px rgba(25, 25, 25, 0.1);
 }
 
-.action-icon {
+.guard-dashboard .action-icon {
   width: 42px;
   height: 42px;
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,69 +241,76 @@
   font-size: 19px;
 }
 
-.action-icon.scanner,
-.action-icon.visitor,
-.action-icon.entry-action,
-.action-icon.exit-action {
+.guard-dashboard .action-icon.scanner,
+.guard-dashboard .action-icon.visitor,
+.guard-dashboard .action-icon.entry-action,
+.guard-dashboard .action-icon.exit-action {
   background: #F4E5E5;
   color: #B22222;
 }
 
-.action-card h3 {
-  margin: 14px 0 4px;
+.guard-dashboard .action-card h3 {
+  margin: 0 0 5px;
   color: #1A1A1A;
   font-size: 14px;
   font-weight: 750;
+  line-height: 1.4;
 }
 
-.action-card p {
+.guard-dashboard .action-card p {
   margin: 0;
   color: #777777;
   font-size: 11px;
+  line-height: 1.5;
 }
 
-.action-arrow {
+.guard-dashboard .action-arrow {
   align-self: flex-end;
   color: #B22222;
   font-size: 18px;
-  transition: 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
-.action-card:hover .action-arrow {
+.guard-dashboard .action-card:hover .action-arrow {
   transform: translateX(3px);
 }
 
-/* ================================
-   RECENT ACTIVITY
-================================ */
+/* =========================================
+   RECENT ACTIVITY HEADER
+========================================= */
 
-.activity-heading {
+.guard-dashboard .activity-heading {
   margin-top: 5px;
 }
 
-.recent-links {
+.guard-dashboard .recent-links {
   display: flex;
+  align-items: center;
   gap: 15px;
 }
 
-.view-all {
+.guard-dashboard .view-all {
+  padding: 5px 0;
   border: none;
   background: transparent;
   color: #B22222;
+  font-family: inherit;
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
 }
 
-.view-all:hover {
+.guard-dashboard .view-all:hover {
   text-decoration: underline;
 }
 
-/* ================================
+/* =========================================
    ACTIVITY CARD
-================================ */
+========================================= */
 
-.activity-card {
+.guard-dashboard .activity-card {
+  width: 100%;
+  min-width: 0;
   background: #FFFFFF;
   border: 1px solid #D5D5D5;
   border-radius: 15px;
@@ -276,23 +318,25 @@
   overflow: hidden;
 }
 
-.activity {
+.guard-dashboard .activity {
   display: flex;
   align-items: center;
+  gap: 0;
+  min-width: 0;
   padding: 17px 20px;
   border-bottom: 1px solid #E5E5E5;
-  transition: 0.15s ease;
+  transition: background 0.15s ease;
 }
 
-.activity:hover {
+.guard-dashboard .activity:hover {
   background: #FAFAFA;
 }
 
-.activity:last-child {
+.guard-dashboard .activity:last-child {
   border-bottom: none;
 }
 
-.activity-icon {
+.guard-dashboard .activity-icon {
   width: 39px;
   height: 39px;
   flex-shrink: 0;
@@ -304,47 +348,54 @@
   font-weight: bold;
 }
 
-.activity-icon.red-bg {
+.guard-dashboard .activity-icon.red-bg {
   background: #F4E5E5;
   color: #B22222;
 }
 
-.activity-info {
+.guard-dashboard .activity-info {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   margin-left: 13px;
 }
 
-.activity-info strong {
+.guard-dashboard .activity-info strong {
   color: #1A1A1A;
   font-size: 13px;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
-.activity-info span {
+.guard-dashboard .activity-info span {
   margin-top: 4px;
   color: #777777;
   font-size: 11px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
-.activity-time {
+.guard-dashboard .activity-time {
+  flex-shrink: 0;
   margin-left: auto;
+  padding-left: 12px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 5px;
 }
 
-.activity-time small {
+.guard-dashboard .activity-time small {
   color: #999999;
   font-size: 10px;
 }
 
-/* ================================
+/* =========================================
    ACTIVITY STATUS
-================================ */
+========================================= */
 
-.status {
+.guard-dashboard .status {
+  display: inline-block;
   padding: 5px 9px;
   border-radius: 20px;
   background: #E8F5E9;
@@ -354,105 +405,157 @@
   font-weight: 700;
 }
 
-/* Optional status variations */
-
-.status.approved,
-.status.completed,
-.status.verified {
+.guard-dashboard .status.approved,
+.guard-dashboard .status.completed,
+.guard-dashboard .status.verified {
   background: #E8F5E9;
   color: #218838;
-  border: 1px solid #B7DFBA;
+  border-color: #B7DFBA;
 }
 
-.status.pending {
+.guard-dashboard .status.pending {
   background: #FFF5DD;
   color: #9A741F;
-  border: 1px solid #EFD9A3;
+  border-color: #EFD9A3;
 }
 
-.status.denied,
-.status.rejected,
-.status.error {
+.guard-dashboard .status.denied,
+.guard-dashboard .status.rejected,
+.guard-dashboard .status.error {
   background: #FBEAEA;
   color: #8F1B1B;
-  border: 1px solid #E5C5C5;
+  border-color: #E5C5C5;
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
+/* =========================================
+   TABLET / SMALL LAPTOP
+========================================= */
 
-@media (max-width: 1100px) {
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1200px) {
+  .guard-dashboard {
+    padding: 28px;
   }
 
-  .actions-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .guard-dashboard .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .guard-dashboard .actions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-@media (max-width: 800px) {
+/* =========================================
+   MOBILE
+========================================= */
 
-  .content {
-    padding: 25px;
+@media (max-width: 700px) {
+  .guard-dashboard {
+    padding: 20px;
   }
 
-  .welcome {
-    padding: 25px;
+  .guard-dashboard .welcome {
+    padding: 24px;
   }
 
-  .actions-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .guard-dashboard .welcome h2 {
+    font-size: 25px;
   }
 
-}
-
-@media (max-width: 600px) {
-
-  .content {
-    padding: 18px;
+  .guard-dashboard .welcome p {
+    font-size: 13px;
   }
 
-  .welcome {
-    padding: 22px;
-  }
-
-  .welcome h2 {
-    font-size: 24px;
-  }
-
-  .shield {
+  .guard-dashboard .shield {
     width: 60px;
     height: 60px;
   }
 
-  .shield svg {
+  .guard-dashboard .shield svg {
     width: 45px;
     height: 45px;
   }
 
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .guard-dashboard .section-header {
+    align-items: flex-start;
   }
 
-  .actions-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .recent-links {
+  .guard-dashboard .recent-links {
     flex-direction: column;
+    align-items: flex-end;
     gap: 5px;
   }
 
-  .activity {
+  .guard-dashboard .activity {
     padding: 14px;
   }
 
-  .activity-time {
+  .guard-dashboard .activity-time {
     display: none;
   }
-
 }
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .guard-dashboard {
+    padding: 15px;
+  }
+
+  .guard-dashboard .welcome {
+    padding: 20px;
+  }
+
+  .guard-dashboard .welcome h2 {
+    font-size: 22px;
+  }
+
+  .guard-dashboard .welcome-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .guard-dashboard .shield {
+    width: 45px;
+    height: 45px;
+  }
+
+  .guard-dashboard .shield svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .guard-dashboard .stats-grid,
+  .guard-dashboard .actions-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .guard-dashboard .stat-card {
+    padding: 20px;
+  }
+
+  .guard-dashboard .section-header h2 {
+    font-size: 18px;
+  }
+
+  .guard-dashboard .section-header p {
+    font-size: 12px;
+  }
+
+  .guard-dashboard .activity-info {
+    margin-left: 10px;
+  }
+}
+
+
+.clickable-stat {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.clickable-stat:hover {
+  transform: translateY(-3px);
+}
+

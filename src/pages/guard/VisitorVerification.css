@@ -7,8 +7,8 @@
   background: #E0E0E0;
   min-height: 100%;
   width: 83vw;
+  box-sizing: border-box;
 }
-
 
 /* ================================
    HEADER
@@ -61,17 +61,17 @@
   box-shadow: 0 0 0 4px rgba(46, 155, 75, 0.12);
 }
 
-
 /* ================================
    MAIN LAYOUT
 ================================ */
 
 .visitor-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 24px;
+  align-items: start;
+  width: 100%;
 }
-
 
 /* ================================
    CARDS
@@ -79,11 +79,13 @@
 
 .visitor-form-card,
 .visitor-result-card {
+  min-width: 0;
   background: #FFFFFF;
   border: 1px solid #D5D5D5;
   border-radius: 18px;
   padding: 26px;
   box-shadow: 0 7px 24px rgba(25, 25, 25, 0.07);
+  box-sizing: border-box;
 }
 
 .visitor-card-header,
@@ -111,17 +113,15 @@
 .visitor-card-icon {
   width: 42px;
   height: 42px;
+  flex-shrink: 0;
   border-radius: 12px;
   background: #FBEAEA;
   color: #B22222;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 21px;
 }
-
 
 /* ================================
    FORM
@@ -152,19 +152,13 @@
 .visitor-form-group select {
   width: 100%;
   padding: 12px 14px;
-
   border: 1px solid #C8C8C8;
   border-radius: 10px;
-
   outline: none;
-
   background: #F7F7F7;
   color: #1A1A1A;
-
   font-size: 14px;
-
   box-sizing: border-box;
-
   transition: 0.2s;
 }
 
@@ -179,7 +173,6 @@
   box-shadow: 0 0 0 3px rgba(178, 34, 34, 0.12);
 }
 
-
 /* ================================
    FORM BUTTONS
 ================================ */
@@ -192,20 +185,14 @@
 
 .visitor-verify-button {
   flex: 1;
-
   border: none;
   border-radius: 10px;
-
   padding: 13px;
-
   background: #B22222;
   color: #FFFFFF;
-
   font-size: 14px;
   font-weight: 700;
-
   cursor: pointer;
-
   transition: 0.2s;
 }
 
@@ -218,24 +205,18 @@
 .visitor-reset-button {
   border: 1px solid #C8C8C8;
   border-radius: 10px;
-
   padding: 13px 20px;
-
   background: #FFFFFF;
   color: #4F4F4F;
-
   font-size: 14px;
   font-weight: 600;
-
   cursor: pointer;
-
   transition: 0.2s;
 }
 
 .visitor-reset-button:hover {
   background: #F3F3F3;
 }
-
 
 /* ================================
    MESSAGE
@@ -244,14 +225,10 @@
 .visitor-message {
   margin-top: 18px;
   padding: 13px 15px;
-
   border-radius: 10px;
-
   display: flex;
   align-items: center;
-
   gap: 10px;
-
   font-size: 13px;
 }
 
@@ -264,18 +241,12 @@
   margin: 0;
 }
 
-
-/* ERROR / DENIED */
-
 .visitor-message.error,
 .visitor-message.denied {
   background: #FBEAEA;
   color: #8F1B1B;
   border: 1px solid #E7C1C1;
 }
-
-
-/* SUCCESS */
 
 .visitor-message.success {
   background: #E8F5E9;
@@ -284,37 +255,29 @@
   font-weight: 600;
 }
 
-
 /* ================================
    EMPTY RESULT
 ================================ */
 
 .visitor-empty {
   min-height: 390px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-align: center;
 }
 
 .visitor-empty-icon {
   width: 65px;
   height: 65px;
-
   border-radius: 50%;
-
   background: #F1F1F1;
   color: #777777;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 28px;
-
   margin-bottom: 15px;
 }
 
@@ -325,13 +288,10 @@
 
 .visitor-empty p {
   margin-top: 7px;
-
   color: #888888;
-
   font-size: 13px;
   line-height: 1.6;
 }
-
 
 /* ================================
    VERIFICATION RESULT
@@ -341,49 +301,34 @@
   text-align: center;
 }
 
-
-/* BRIGHT VERIFIED ICON */
-
 .visitor-verified-icon {
   width: 62px;
   height: 62px;
-
   margin: 2px auto 12px;
-
   border-radius: 50%;
-
   background: #E8F5E9;
   color: #2E9B4B;
-
   border: 2px solid #B7DFBA;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 27px;
   font-weight: 700;
-
   box-shadow: 0 5px 18px rgba(46, 155, 75, 0.14);
 }
 
 .visitor-result h3 {
   margin: 0;
-
   color: #1A1A1A;
-
   font-size: 20px;
   font-weight: 750;
 }
 
 .visitor-result-subtitle {
   margin: 6px 0 20px;
-
   color: #666666;
-
   font-size: 13px;
 }
-
 
 /* ================================
    VISITOR DETAILS
@@ -391,25 +336,19 @@
 
 .visitor-detail-list {
   text-align: left;
-
   border: 1px solid #D5D5D5;
   border-radius: 12px;
-
   overflow: hidden;
-
   background: #FFFFFF;
 }
 
 .visitor-detail {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
-
+  gap: 10px;
   padding: 12px 14px;
-
   background: #FFFFFF;
-
   border-bottom: 1px solid #E4E4E4;
 }
 
@@ -428,13 +367,11 @@
 
 .visitor-detail strong {
   color: #222222;
-
   font-size: 13px;
   font-weight: 650;
-
   text-align: right;
+  overflow-wrap: anywhere;
 }
-
 
 /* ================================
    RESIDENT APPROVAL
@@ -442,74 +379,52 @@
 
 .resident-approval {
   margin-top: 16px;
-
   padding: 15px;
-
   border: 1px solid #D5D5D5;
   border-radius: 12px;
-
   background: #FFFFFF;
-
   text-align: left;
-
   box-shadow: 0 3px 12px rgba(25, 25, 25, 0.04);
 }
 
 .approval-header {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
-
+  gap: 10px;
   margin-bottom: 12px;
 }
 
 .approval-header > span {
   color: #444444;
-
   font-size: 13px;
   font-weight: 700;
 }
 
-
-/* APPROVED = GREEN */
-
 .approval-approved {
   padding: 6px 10px;
-
   border-radius: 20px;
-
   background: #E8F5E9;
   color: #218838;
-
   border: 1px solid #B7DFBA;
-
   font-size: 11px;
   font-weight: 700;
 }
 
-
-/* PENDING = AMBER */
-
 .approval-pending {
   padding: 6px 10px;
-
   border-radius: 20px;
-
   background: #FFF5DD;
   color: #9A741F;
-
   border: 1px solid #EFD9A3;
-
   font-size: 11px;
   font-weight: 700;
 }
 
 .approval-details {
   display: flex;
-
   justify-content: space-between;
-
+  gap: 10px;
   padding: 6px 0;
 }
 
@@ -521,8 +436,8 @@
 .approval-details strong {
   color: #333333;
   font-size: 12px;
+  text-align: right;
 }
-
 
 /* ================================
    ALLOW / DENY BUTTONS
@@ -530,37 +445,25 @@
 
 .visitor-decision-buttons {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 12px;
-
   margin-top: 18px;
 }
 
 .allow-visitor-button,
 .deny-visitor-button {
   border-radius: 10px;
-
   padding: 12px;
-
   font-weight: 700;
   font-size: 13px;
-
   cursor: pointer;
-
   transition: 0.2s;
 }
-
-
-/* GREEN ALLOW BUTTON */
 
 .allow-visitor-button {
   background: #2E9B4B;
   color: #FFFFFF;
-
   border: none;
-
   box-shadow: 0 4px 12px rgba(46, 155, 75, 0.15);
 }
 
@@ -570,13 +473,9 @@
   box-shadow: 0 6px 15px rgba(46, 155, 75, 0.22);
 }
 
-
-/* RED DENY BUTTON */
-
 .deny-visitor-button {
   background: #FBEAEA;
   color: #8F1B1B;
-
   border: 1px solid #E5C5C5;
 }
 
@@ -585,29 +484,20 @@
   transform: translateY(-1px);
 }
 
-
 /* ================================
    PENDING APPROVAL
 ================================ */
 
 .pending-approval {
   display: flex;
-
   align-items: flex-start;
-
   gap: 10px;
-
   margin-top: 18px;
-
   padding: 14px;
-
   border-radius: 11px;
-
   background: #FFF8E8;
   border: 1px solid #F0DDAF;
-
   color: #8A6A22;
-
   text-align: left;
 }
 
@@ -618,24 +508,17 @@
 
 .pending-approval strong {
   display: block;
-
   font-size: 13px;
-
   margin-bottom: 3px;
-
   color: #8A6A22;
 }
 
 .pending-approval p {
   margin: 0;
-
   font-size: 11px;
-
   line-height: 1.5;
-
   color: #806C43;
 }
-
 
 /* ================================
    FINAL APPROVED STATUS
@@ -643,24 +526,15 @@
 
 .final-entry-status {
   display: flex;
-
   align-items: center;
-
   gap: 10px;
-
   margin-top: 18px;
-
   padding: 14px;
-
   border-radius: 11px;
-
   text-align: left;
-
   background: #E8F5E9;
   border: 1px solid #B7DFBA;
-
   color: #218838;
-
   box-shadow: 0 4px 14px rgba(46, 155, 75, 0.10);
 }
 
@@ -678,14 +552,10 @@
 
 .final-entry-status small {
   display: block;
-
   margin-top: 3px;
-
   font-size: 11px;
-
   color: #4F7655;
 }
-
 
 /* ================================
    FINAL DENIED STATUS
@@ -693,22 +563,14 @@
 
 .final-denied-status {
   display: flex;
-
   align-items: center;
-
   gap: 10px;
-
   margin-top: 18px;
-
   padding: 14px;
-
   border-radius: 11px;
-
   text-align: left;
-
   background: #FBEAEA;
   border: 1px solid #E5C5C5;
-
   color: #8F1B1B;
 }
 
@@ -724,12 +586,210 @@
 
 .final-denied-status small {
   display: block;
-
   margin-top: 3px;
-
   font-size: 11px;
 }
 
+/* ================================
+   SAVED VISITOR REQUESTS
+   Full width below both top cards
+================================ */
+
+.saved-requests-card {
+  grid-column: 1 / -1;
+  grid-row: auto;
+  width: 100%;
+  min-width: 0;
+  margin-top: 0;
+  padding: 26px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border: 1px solid #D5D5D5;
+  border-radius: 18px;
+  box-shadow: 0 7px 24px rgba(25, 25, 25, 0.07);
+}
+
+.saved-requests-card h3 {
+  margin: 0 0 5px;
+  color: #1A1A1A;
+  font-size: 18px;
+}
+
+.saved-requests-card p {
+  color: #777777;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.saved-requests-card > .visitor-reset-button {
+  padding: 12px 20px;
+  background: #FFFFFF;
+  color: #4F4F4F;
+  border: 1px solid #C8C8C8;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.saved-requests-card > .visitor-reset-button:hover {
+  background: #F3F3F3;
+}
+
+.saved-request-item {
+  min-width: 0;
+  margin-top: 14px;
+  padding: 16px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border: 1px solid #D5D5D5;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+
+.saved-request-item strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #1A1A1A;
+  font-size: 15px;
+}
+
+.saved-request-item p {
+  margin: 5px 0;
+  color: #666666;
+  font-size: 13px;
+}
+
+.saved-request-item .visitor-verify-button {
+  margin-top: 8px;
+  padding: 11px 16px;
+}
+
+/* ================================
+   REQUEST STATUS LABELS
+================================ */
+
+.request-status-approved,
+.request-status-entered,
+.request-status-denied,
+.request-status-pending {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.request-status-approved,
+.request-status-entered {
+  color: #218838;
+  background: #E8F5E9;
+  border: 1px solid #B7DFBA;
+}
+
+.request-status-denied {
+  color: #8F1B1B;
+  background: #FBEAEA;
+  border: 1px solid #E5C5C5;
+}
+
+.request-status-pending {
+  color: #9A741F;
+  background: #FFF5DD;
+  border: 1px solid #EFD9A3;
+}
+
+/* ================================
+   SELECTED REQUEST DETAILS
+================================ */
+
+.selected-request-card {
+  grid-column: 1 / -1;
+  min-width: 0;
+  width: 100%;
+  padding: 26px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border: 1px solid #D5D5D5;
+  border-radius: 18px;
+  box-shadow: 0 7px 24px rgba(25, 25, 25, 0.07);
+}
+
+.selected-request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.selected-request-header h3 {
+  margin: 7px 0 5px;
+  color: #1A1A1A;
+  font-size: 18px;
+}
+
+.selected-request-header p {
+  margin: 0;
+  color: #777777;
+  font-size: 13px;
+}
+
+.selected-request-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  margin-bottom: 18px;
+  background: #F7F7F7;
+  border: 1px solid #E4E4E4;
+  border-radius: 10px;
+}
+
+.selected-request-status-row > span {
+  color: #444444;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.selected-request-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.selected-request-detail {
+  min-width: 0;
+  padding: 16px;
+  background: #FAFAFA;
+  border: 1px solid #E4E4E4;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.selected-request-detail span {
+  display: block;
+  margin-bottom: 8px;
+  color: #777777;
+  font-size: 12px;
+}
+
+.selected-request-detail strong {
+  color: #1A1A1A;
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.selected-request-note {
+  margin: 18px 0 0;
+  padding: 13px;
+  background: #FBEAEA;
+  border: 1px solid #E7C1C1;
+  border-radius: 9px;
+  color: #8F1B1B;
+  font-size: 12px;
+  line-height: 1.6;
+}
 
 /* ================================
    SECURITY NOTE
@@ -737,19 +797,13 @@
 
 .visitor-security-note {
   margin-top: 24px;
-
   display: flex;
   align-items: center;
-
   gap: 14px;
-
   padding: 17px 20px;
-
   border: 1px solid #D5D5D5;
   border-radius: 14px;
-
   background: #FFFFFF;
-
   box-shadow: 0 4px 14px rgba(25, 25, 25, 0.04);
 }
 
@@ -760,39 +814,46 @@
 
 .visitor-security-note strong {
   display: block;
-
   color: #333333;
-
   font-size: 14px;
-
   margin-bottom: 4px;
 }
 
 .visitor-security-note p {
   margin: 0;
-
   color: #777777;
-
   font-size: 12px;
 }
-
 
 /* ================================
    RESPONSIVE
 ================================ */
 
-@media (max-width: 950px) {
-
-  .visitor-layout {
-    grid-template-columns: 1fr;
+@media (max-width: 1100px) {
+  .visitor-page {
+    width: 100%;
   }
-
 }
 
+@media (max-width: 950px) {
+  .visitor-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .saved-requests-card,
+  .selected-request-card {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .selected-request-details-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
 @media (max-width: 600px) {
-
   .visitor-page {
+    width: 100%;
     padding: 20px;
   }
 
@@ -800,6 +861,13 @@
     align-items: flex-start;
     gap: 15px;
     flex-direction: column;
+  }
+
+  .visitor-form-card,
+  .visitor-result-card,
+  .saved-requests-card,
+  .selected-request-card {
+    padding: 20px;
   }
 
   .visitor-form-buttons {
@@ -819,4 +887,133 @@
     max-width: 55%;
   }
 
+  .selected-request-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .selected-request-details-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .selected-request-status-row {
+    align-items: flex-start;
+  }
+}
+
+/* =========================================
+   SIDE-BY-SIDE VIEW REQUESTS
+   Add this at the END of VisitorVerification.css
+   ========================================= */
+
+.saved-requests-card {
+  grid-column: 1;
+  width: 100%;
+  min-width: 0;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+.selected-request-card {
+  grid-column: 2;
+  width: 100%;
+  min-width: 0;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+/* Keep both sections side by side on wider screens */
+@media (min-width: 951px) {
+  .saved-requests-card,
+  .selected-request-card {
+    grid-row: auto;
+  }
+}
+
+/* Stack sections on smaller screens */
+@media (max-width: 950px) {
+  .saved-requests-card,
+  .selected-request-card {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .saved-requests-card,
+  .selected-request-card {
+    padding: 20px;
+  }
+
+  .selected-request-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Keep Visitor Form and Verification Result the same size */
+.visitor-form-card,
+.visitor-result-card {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+
+/* Keep both columns equal in width */
+.visitor-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+/* On smaller screens, let both cards size naturally */
+@media (max-width: 950px) {
+  .visitor-form-card,
+  .visitor-result-card {
+    height: auto;
+  }
+}
+
+
+/* Keep the request information box only as large as its content */
+.selected-request-card {
+  height: fit-content;
+  align-self: start;
+}
+
+.saved-request-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.delete-request-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: #fff0f0;
+  color: #b22222;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.delete-request-icon:hover {
+  background: #b22222;
+  color: #ffffff;
+}
+#pending-requests {
+  scroll-margin-top: 100px;
+}
+#pending-requests {
+  scroll-margin-top: 100px;
 }

@@ -4,48 +4,17 @@ import "./ExitLogs.css";
 function ExitLogs() {
   const [search, setSearch] = useState("");
 
-  const exitLogs = [
-    {
-      id: "X001",
-      visitor: "Arjun Kapoor",
-      flat: "C-305",
-      purpose: "Family Visit",
-      entry: "07:30 PM",
-      exit: "08:45 PM",
-      duration: "1h 15m",
-      qr: "QR003",
-    },
-    {
-      id: "X002",
-      visitor: "Neha Verma",
-      flat: "A-105",
-      purpose: "Delivery",
-      entry: "06:50 PM",
-      exit: "07:10 PM",
-      duration: "20m",
-      qr: "QR004",
-    },
-    {
-      id: "X003",
-      visitor: "Aman Gupta",
-      flat: "B-201",
-      purpose: "Guest Visit",
-      entry: "05:40 PM",
-      exit: "06:55 PM",
-      duration: "1h 15m",
-      qr: "QR005",
-    },
-    {
-      id: "X004",
-      visitor: "Simran Kaur",
-      flat: "C-102",
-      purpose: "Personal Visit",
-      entry: "04:20 PM",
-      exit: "05:30 PM",
-      duration: "1h 10m",
-      qr: "QR006",
-    },
-  ];
+  
+const [exitLogs] = useState(() => {
+  try {
+    return JSON.parse(
+      localStorage.getItem("entriqExitLogs") || "[]"
+    );
+  } catch {
+    return [];
+  }
+});
+
 
   const filteredLogs = exitLogs.filter(
     (log) =>
@@ -117,7 +86,7 @@ function ExitLogs() {
 
           <div>
             <span>Latest Exit</span>
-            <strong>08:45 PM</strong>
+            <strong>{exitLogs[0]?.exit || "--"}</strong>
           </div>
 
         </div>
