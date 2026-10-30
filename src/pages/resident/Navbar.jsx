@@ -1,6 +1,7 @@
 import { FaShieldAlt } from "react-icons/fa";
 import {useState,useEffect} from 'react'
 import axios from 'axios';
+import "./Navbar.css";
  
 function Navbar({residentId=1}) {
   const [profile,setProfile]=useState({
@@ -27,20 +28,21 @@ function Navbar({residentId=1}) {
   },[residentId]);
   return (
     <header className="resident-top-navbar">
-      <div className="resident-top-brand">
-        <FaShieldAlt />
-        <span>EntriQ</span>
-      </div>
-      <div className="resident-top-profile">
 
-        <div className="resident-avatar">
+        <div className="resident-top-brand">
+          <FaShieldAlt />
+          <span>EntriQ</span>
+        </div>
+        <div className="resident-top-profile">
+          <div className="resident-avatar">
             {profile.resName ? profile.resName.charAt(0).toUpperCase() : 'R'}
-        </div>
-        <div className="resident-top-user-info">
-          <strong>{profile.resName || "Resident"}</strong>
-          <span>{profile.unit || "N/A"}</span>
-        </div>
+          </div>
+          <div className="resident-top-user-info">
+            <strong>{profile.resName || "Resident"}</strong>
+            <span>{profile.unit || "N/A"}</span>
+          </div>
       </div>
+      
     </header>
   );
 }
