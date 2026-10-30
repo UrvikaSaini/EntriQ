@@ -1,4 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchParkingSlots,
+  addVehicle as addVehicleAction,
+  removeVehicle as removeVehicleAction,
+} from "../store/parkingSlice";
 import "./ParkingComplaints.css";
 
 function ParkingIcon() {
@@ -38,12 +44,21 @@ function CarIcon() {
   );
 }
 
-function Parking({ slots, setSlots }) {
+function Parking() {
+  const dispatch = useDispatch();
+
+  const { slots, loading, error } = useSelector(
+    (state) => state.parking
+  );
 
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [vehicleNumber, setVehicleNumber] = useState("");
   const [searchVehicle, setSearchVehicle] = useState("");
   const [searchResult, setSearchResult] = useState(null);
+
+  useEffect(() => {
+    dispatch(fetchParkingSlots());
+  }, [dispatch]);
 
   const availableSlots = slots.filter(
     (slot) => slot.status === "Available"
@@ -54,70 +69,61 @@ function Parking({ slots, setSlots }) {
   ).length;
 
 
-  function addVehicle() {
 
-    if (!selectedSlot) {
-      alert("Please select a parking slot");
-      return;
-    }
+async function addVehicle() {
+  if (!selectedSlot) {
+    alert("Please select a parking slot");
+    return;
+  }
 
-    if (vehicleNumber.trim() === "") {
-      alert("Please enter vehicle number");
-      return;
-    }
+  if (vehicleNumber.trim() === "") {
+    alert("Please enter vehicle number");
+    return;
+  }
 
-    const updatedSlots = slots.map((slot) => {
-
-      if (slot.id === selectedSlot.id) {
-        return {
-          ...slot,
-          status: "Occupied",
-          vehicle: vehicleNumber.trim().toUpperCase()
-        };
-      }
-
-      return slot;
-    });
-
-    setSlots(updatedSlots);
+  try {
+    await dispatch(
+      addVehicleAction({
+        slotId: selectedSlot.id,
+        vehicleNumber: vehicleNumber.trim().toUpperCase(),
+      })
+    ).unwrap();
 
     setSelectedSlot({
       ...selectedSlot,
       status: "Occupied",
-      vehicle: vehicleNumber.trim().toUpperCase()
+      vehicle: vehicleNumber.trim().toUpperCase(),
     });
 
     setVehicleNumber("");
+  } catch (error) {
+    alert(typeof error === "string" ? error : "Failed to add vehicle");
+  }
+}
+
+
+
+
+async function removeVehicle() {
+  if (!selectedSlot) {
+    return;
   }
 
-
-  function removeVehicle() {
-
-    if (!selectedSlot) {
-      return;
-    }
-
-    const updatedSlots = slots.map((slot) => {
-
-      if (slot.id === selectedSlot.id) {
-        return {
-          ...slot,
-          status: "Available",
-          vehicle: ""
-        };
-      }
-
-      return slot;
-    });
-
-    setSlots(updatedSlots);
+  try {
+    await dispatch(
+      removeVehicleAction(selectedSlot.id)
+    ).unwrap();
 
     setSelectedSlot({
       ...selectedSlot,
       status: "Available",
-      vehicle: ""
+      vehicle: "",
     });
+  } catch (error) {
+    alert(typeof error === "string" ? error : "Failed to remove vehicle");
   }
+}
+
 
 
   function searchVehicleSlot() {
@@ -141,6 +147,13 @@ function Parking({ slots, setSlots }) {
   return (
 
     <div className="parking-page">
+      {loading && <p>Loading parking slots...</p>}
+
+{error && (
+  <p role="alert">
+    Error: {error}
+  </p>
+)}
 
 
       {/* HEADER */}

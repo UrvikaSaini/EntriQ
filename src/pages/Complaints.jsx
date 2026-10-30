@@ -1,4 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchComplaints,
+  addComplaint as addComplaintAction,
+  resolveComplaint as resolveComplaintAction,
+} from "../store/complaintsSlice";
 import "./ParkingComplaints.css";
 
 function ComplaintIcon() {
@@ -11,7 +17,16 @@ function ComplaintIcon() {
   );
 }
 
-function Complaints({ complaints, setComplaints, role }) {
+function Complaints({ role }) {
+  const dispatch = useDispatch();
+
+  const { complaints, loading, error } = useSelector(
+    (state) => state.complaints
+  );
+
+  useEffect(() => {
+    dispatch(fetchComplaints());
+  }, [dispatch]);
 
   const [name, setName] = useState("");
   const [flatNo, setFlatNo] = useState("");
@@ -59,40 +74,36 @@ function Complaints({ complaints, setComplaints, role }) {
     }
 
     const newComplaint = {
-      id: Date.now(),
-      name: name.trim(),
-      flatNo: flatNo.trim().toUpperCase(),
-      complaint: complaint.trim(),
-      status: "Pending"
-    };
+  name: name.trim(),
+  flatNo: flatNo.trim().toUpperCase(),
+  complaint: complaint.trim(),
+  category: "General",
+};
 
-    setComplaints([...complaints, newComplaint]);
-
-    // Clear form
+dispatch(addComplaintAction(newComplaint))
+  .unwrap()
+  .then(() => {
     setName("");
     setFlatNo("");
     setComplaint("");
+    setNameError("");
+    setFlatError("");
+    setComplaintError("");
+  })
+  .catch((err) => {
+    console.error("Error adding complaint:", err);
+  });
   }
 
   function resolveComplaint(id) {
+  if (role !== "admin") return;
 
-    if (role !== "admin") {
-      return;
-    }
-
-    const updatedComplaints = complaints.map((item) => {
-
-      if (item.id === id) {
-        return {
-          ...item,
-          status: "Resolved"
-        };
-      }
-      return item;
+  dispatch(resolveComplaintAction(id))
+    .unwrap()
+    .catch((err) => {
+      console.error("Error resolving complaint:", err);
     });
-
-    setComplaints(updatedComplaints);
-  }
+}
 
   return (
     <div className="complaints-page">
@@ -241,7 +252,13 @@ function Complaints({ complaints, setComplaints, role }) {
 
           </div>
 
+          {loading && <p>Loading complaints...</p>}
 
+{error && (
+  <p role="alert">
+    Error: {error}
+  </p>
+)}
           <div className="complaints-list">
 
             {complaints.length === 0 ? (
@@ -281,7 +298,7 @@ function Complaints({ complaints, setComplaints, role }) {
 
                   <div className="complaint-right">
                     <span
-                      className={`status-badge ${item.status.toLowerCase()}`}
+                      className={`status-badge ${(item.status || "Pending").toLowerCase()}`}
                     >
                       {item.status}
                     </span>

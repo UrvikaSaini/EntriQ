@@ -331,7 +331,7 @@
 .input-group input {
   background: #E0E0E0;
   border: 1px solid #E0E0E0;
-  color: white;
+  color: #1A1A1A;
   padding: 10px;
   border-radius: 6px;
   outline: none;
@@ -359,4 +359,11 @@
   color: #B22222;
   cursor: pointer;
   text-decoration: underline;
+}
+.eye-button{
+  position: absolute;
+  right: 40px;
+  bottom: 135px;
+  background: none;
+
 }
