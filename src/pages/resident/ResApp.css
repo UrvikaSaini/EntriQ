@@ -143,8 +143,8 @@ body {
 }
 
 .resident-avatar {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,7 +187,10 @@ body {
   background-color: #1a1a1a;
   border-bottom: 1px solid #333333;
 }
-
+.resident-top-navbar:hover{
+  background: #0a0201;
+  border-bottom: 3px solid #b6b9bf;
+}
 .resident-top-brand {
   display: flex;
   align-items: center;
@@ -196,7 +199,9 @@ body {
   font-size: 1.45rem;
   font-weight: 800;
 }
-
+.resident-top-navbar :hover{
+  font-size: 1.5rem;
+}
 .resident-top-brand svg {
   color: #b22222;
   font-size: 1.65rem;
@@ -335,8 +340,8 @@ body {
 
   .resident-mobile-toggle-btn {
     position: fixed;
-    top: 13px;
-    left: 14px;
+    top: 14px;
+    left: 16px;
     z-index: 200;
     width: 40px;
     height: 40px;
@@ -345,7 +350,7 @@ body {
     justify-content: center;
     border: none;
     border-radius: 8px;
-    background-color: #b22222;
+    background-color: #1A1A1A;
     color: #ffffff;
     font-size: 23px;
     cursor: pointer;

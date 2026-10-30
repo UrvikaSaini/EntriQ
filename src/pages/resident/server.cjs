@@ -10,6 +10,8 @@ const visitorPassRoute=require("./visitorPass.cjs");
 const visitorRequestRoute=require("./visitorRequest.cjs");
 const parkingRoute = require('./parking.cjs');
 const complaintsRoute = require('./complaints.cjs');
+const noticeRoutes=require('./notice.cjs');
+const guardRoute=require('../../services/guard.cjs')
 
 const app=express();
 app.use(cors());
@@ -20,6 +22,8 @@ app.use('/api/visitor_passes',visitorPassRoute);
 app.use('/api/visitor_requests',visitorRequestRoute);
 app.use('/api/parking', parkingRoute);
 app.use('/api/complaints', complaintsRoute);
+app.use('/api/notices',noticeRoutes);
+app.use('/api/guard',guardRoute);
 
 const Port=process.env.PORT|| 5000;
 app.listen(Port,()=>{
